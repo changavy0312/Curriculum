@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum</title>
+<meta name="description" content="A personal lifelong curriculum">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23c2410c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Tamil:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-elev: #ffffff;
+  --bg-soft: #f7f7f6;
+  --bg-hover: #f0f0ee;
+  --border: #ececea;
+  --border-strong: #d8d7d4;
+  --text: #18181b;
+  --text-soft: #52525b;
+  --text-mute: #a1a1aa;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+  --shadow: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.07);
+
+  --c-ppe: #c2410c;
+  --c-tamil: #b45309;
+  --c-history: #15803d;
+  --c-greek: #0369a1;
+  --c-code: #6d28d9;
+  --c-leaders: #be185d;
+  --c-tamilthought: #a16207;
+  --c-business: #115e59;
+  --c-science: #4338ca;
+  --c-finance: #047857;
+  --c-letters: #9333ea;
+  --c-strategy: #7c2d12;
+  --c-productivity: #1d4ed8;
+  --c-becoming: #db2777;
+  --c-briefing: #0f172a;
+  --c-latin: #92400e;
+  --c-storytelling: #831843;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 14px;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-elev: #141414;
+  --bg-soft: #1a1a1a;
+  --bg-hover: #222;
+  --border: #262626;
+  --border-strong: #333;
+  --text: #fafafa;
+  --text-soft: #a1a1aa;
+  --text-mute: #71717a;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+
+  --c-ppe: #fb923c;
+  --c-tamil: #fbbf24;
+  --c-history: #4ade80;
+  --c-greek: #38bdf8;
+  --c-code: #a78bfa;
+  --c-leaders: #f472b6;
+  --c-tamilthought: #facc15;
+  --c-business: #5eead4;
+  --c-science: #818cf8;
+  --c-finance: #34d399;
+  --c-letters: #c084fc;
+  --c-strategy: #fb7185;
+  --c-productivity: #60a5fa;
+  --c-becoming: #f472b6;
+  --c-briefing: #cbd5e1;
+  --c-latin: #fbbf24;
+  --c-storytelling: #f472b6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*::selection { background: var(--text); color: var(--bg); }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.005em;
+  min-height: 100vh;
+  transition: background 0.2s, color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, .task, .task-check, .nav-item, .track-card, a {
+  touch-action: manipulation;
+}
+
+.app { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+
+/* TOPBAR */
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+.brand-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-ppe); }
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+.date-chip { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-soft); padding: 6px 10px; background: var(--bg-soft); border-radius: var(--radius-sm); letter-spacing: 0.02em; }
+.icon-btn { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); background: var(--bg-elev); border-radius: var(--radius-sm); cursor: pointer; color: var(--text-soft); transition: all 0.15s; padding: 0; }
+.icon-btn:hover { background: var(--bg-hover); color: var(--text); border-color: var(--border-strong); }
+
+/* TUTORIAL BANNER */
+.tutorial-banner {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--c-ppe);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.tutorial-banner-text { flex: 1; min-width: 200px; }
+.tutorial-banner-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-ppe); font-weight: 600; margin-bottom: 4px; }
+.tutorial-banner-title { font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.2; margin-bottom: 2px; }
+.tutorial-banner-sub { font-size: 13px; color: var(--text-soft); }
+
+/* NAV */
+.nav { display: flex; gap: 4px; margin-bottom: 32px; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav-item { font: inherit; font-size: 13px; font-weight: 500; color: var(--text-soft); background: transparent; border: none; padding: 10px 14px; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.15s, border-color 0.15s; }
+.nav-item:hover { color: var(--text); }
+.nav-item.active { color: var(--text); border-bottom-color: var(--text); font-weight: 600; }
+
+.view { display: none; animation: fadeIn 0.25s ease; }
+.view.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* HERO */
+.hero { margin-bottom: 32px; }
+.hero-week-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-soft); margin-bottom: 16px; }
+.hero-title { font-family: 'Instrument Serif', serif; font-size: clamp(36px, 5vw, 52px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 400; margin-bottom: 12px; }
+.hero-title em { font-style: italic; color: var(--text-soft); }
+.hero-sub { color: var(--text-soft); font-size: 16px; max-width: 600px; }
+
+/* WEEK PHASE TRACKER */
+.phase-tracker {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 24px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px;
+}
+.phase-day {
+  text-align: center;
+  padding: 10px 4px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  cursor: default;
+  position: relative;
+  transition: all 0.15s;
+}
+.phase-day-name { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-mute); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 2px; }
+.phase-day-phase { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 13px; color: var(--text-soft); }
+.phase-day.today { background: var(--text); color: var(--bg); }
+.phase-day.today .phase-day-name, .phase-day.today .phase-day-phase { color: var(--bg); }
+.phase-day.done { background: rgba(21, 128, 61, 0.1); }
+.phase-day.done .phase-day-phase { color: var(--c-history); }
+
+/* STATS */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.stat { background: var(--bg-elev); border: 1px solid var(--border); padding: 16px 18px; border-radius: var(--radius); transition: border-color 0.15s; }
+.stat:hover { border-color: var(--border-strong); }
+.stat-label { font-size: 11px; color: var(--text-mute); font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 6px; }
+.stat-value { font-family: 'Instrument Serif', serif; font-size: 32px; font-weight: 400; letter-spacing: -0.02em; line-height: 1; }
+.stat-sub { font-size: 11px; color: var(--text-mute); margin-top: 4px; }
+
+/* ENERGY */
+.energy { display: flex; align-items: center; gap: 12px; background: var(--bg-elev); border: 1px solid var(--border); padding: 12px 16px; border-radius: var(--radius); margin-bottom: 24px; flex-wrap: wrap; }
+.energy-label { font-size: 12px; color: var(--text-soft); font-weight: 500; }
+.energy-btns { display: flex; gap: 4px; flex: 1; flex-wrap: wrap; }
+.energy-btn { font: inherit; font-size: 12px; padding: 6px 12px; border: 1px solid transparent; background: transparent; color: var(--text-soft); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+.energy-btn:hover { background: var(--bg-hover); color: var(--text); }
+.energy-btn.active { background: var(--text); color: var(--bg); }
+
+/* SECTION */
+.sect-h { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; margin-top: 32px; gap: 12px; flex-wrap: wrap; }
+.sect-h h2 { font-size: 14px; font-weight: 600; color: var(--text); letter-spacing: -0.01em; }
+.sect-h .meta { font-size: 12px; color: var(--text-mute); }
+
+/* TASKS */
+.tasks { display: flex; flex-direction: column; gap: 8px; }
+.task { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); cursor: pointer; transition: all 0.15s; position: relative; }
+.task:hover { border-color: var(--border-strong); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.task.priority { border-left: 3px solid var(--c-ppe); }
+.task-check { flex-shrink: 0; width: 20px; height: 20px; border: 1.5px solid var(--border-strong); border-radius: 6px; margin-top: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; background: transparent; }
+.task-check:hover { border-color: var(--text); }
+.task.done .task-check { background: var(--text); border-color: var(--text); }
+.task.done .task-check::after { content: ''; width: 5px; height: 9px; border: solid var(--bg); border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px, -1px); }
+.task-body { flex: 1; min-width: 0; }
+.task-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.task-track { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; background: var(--bg-soft); }
+.task-track[data-t="ppe"] { color: var(--c-ppe); background: rgba(194, 65, 12, 0.08); }
+.task-track[data-t="tamil"] { color: var(--c-tamil); background: rgba(180, 83, 9, 0.08); }
+.task-track[data-t="history"] { color: var(--c-history); background: rgba(21, 128, 61, 0.08); }
+.task-track[data-t="greek"] { color: var(--c-greek); background: rgba(3, 105, 161, 0.08); }
+.task-track[data-t="code"] { color: var(--c-code); background: rgba(109, 40, 217, 0.08); }
+.task-track[data-t="leaders"] { color: var(--c-leaders); background: rgba(190, 24, 93, 0.08); }
+.task-track[data-t="tamilthought"] { color: var(--c-tamilthought); background: rgba(161, 98, 7, 0.08); }
+.task-track[data-t="business"] { color: var(--c-business); background: rgba(17, 94, 89, 0.08); }
+.task-track[data-t="science"] { color: var(--c-science); background: rgba(67, 56, 202, 0.08); }
+.task-track[data-t="finance"] { color: var(--c-finance); background: rgba(4, 120, 87, 0.08); }
+.task-track[data-t="letters"] { color: var(--c-letters); background: rgba(147, 51, 234, 0.08); }
+.task-track[data-t="strategy"] { color: var(--c-strategy); background: rgba(124, 45, 18, 0.08); }
+.task-track[data-t="productivity"] { color: var(--c-productivity); background: rgba(29, 78, 216, 0.08); }
+.task-track[data-t="becoming"] { color: var(--c-becoming); background: rgba(219, 39, 119, 0.08); }
+.task-track[data-t="briefing"] { color: var(--c-briefing); background: rgba(15, 23, 42, 0.08); }
+.task-track[data-t="latin"] { color: var(--c-latin); background: rgba(146, 64, 14, 0.08); }
+.task-track[data-t="storytelling"] { color: var(--c-storytelling); background: rgba(131, 24, 67, 0.08); }
+[data-theme="dark"] .task-track { background: rgba(255,255,255,0.05); }
+.task-duration { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); }
+.task-progress { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--c-history); padding: 2px 6px; background: rgba(21, 128, 61, 0.08); border-radius: 4px; }
+.task-tutorial-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--c-ppe); padding: 2px 6px; background: rgba(194, 65, 12, 0.08); border-radius: 4px; font-weight: 600; }
+.task-title { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.35; margin-bottom: 4px; overflow-wrap: break-word; word-break: break-word; }
+.task.done .task-title { color: var(--text-mute); text-decoration: line-through; }
+.task-desc { font-size: 13px; color: var(--text-soft); line-height: 1.5; }
+.task.done .task-desc { color: var(--text-mute); }
+.task-chev { flex-shrink: 0; color: var(--text-mute); margin-top: 2px; }
+
+/* WEEK NAV */
+.week-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: var(--bg-elev); border: 1px solid var(--border); padding: 12px 18px; border-radius: var(--radius); margin-bottom: 24px; }
+.week-nav-btn { font: inherit; font-size: 13px; color: var(--text-soft); background: transparent; border: none; cursor: pointer; padding: 6px 10px; border-radius: var(--radius-sm); transition: all 0.15s; }
+.week-nav-btn:hover:not(:disabled) { background: var(--bg-hover); color: var(--text); }
+.week-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.week-nav-label { text-align: center; flex: 1; }
+.week-nav-label .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-mute); margin-bottom: 2px; }
+.week-nav-label .name { font-family: 'Instrument Serif', serif; font-size: 18px; font-style: italic; }
+
+/* TRACKS GRID */
+.track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 32px; }
+.track-card { background: var(--bg-elev); border: 1px solid var(--border); padding: 20px 22px; border-radius: var(--radius); cursor: pointer; transition: all 0.15s; position: relative; overflow: hidden; }
+.track-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--accent-color); }
+.track-card:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow); }
+.track-card[data-t="ppe"] { --accent-color: var(--c-ppe); }
+.track-card[data-t="tamil"] { --accent-color: var(--c-tamil); }
+.track-card[data-t="history"] { --accent-color: var(--c-history); }
+.track-card[data-t="greek"] { --accent-color: var(--c-greek); }
+.track-card[data-t="code"] { --accent-color: var(--c-code); }
+.track-card[data-t="leaders"] { --accent-color: var(--c-leaders); }
+.track-card[data-t="tamilthought"] { --accent-color: var(--c-tamilthought); }
+.track-card[data-t="business"] { --accent-color: var(--c-business); }
+.track-card[data-t="science"] { --accent-color: var(--c-science); }
+.track-card[data-t="finance"] { --accent-color: var(--c-finance); }
+.track-card[data-t="letters"] { --accent-color: var(--c-letters); }
+.track-card[data-t="strategy"] { --accent-color: var(--c-strategy); }
+.track-card[data-t="productivity"] { --accent-color: var(--c-productivity); }
+.track-card[data-t="becoming"] { --accent-color: var(--c-becoming); }
+.track-card[data-t="briefing"] { --accent-color: var(--c-briefing); }
+.track-card[data-t="latin"] { --accent-color: var(--c-latin); }
+.track-card[data-t="storytelling"] { --accent-color: var(--c-storytelling); }
+.track-card-head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-color); margin-bottom: 8px; font-weight: 500; }
+.track-card-title { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 6px; line-height: 1.2; }
+.track-card-sub { font-size: 13px; color: var(--text-soft); margin-bottom: 14px; }
+.track-card-stats { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-mute); }
+.track-card-progress { display: flex; align-items: center; gap: 6px; }
+.track-card-bar { width: 60px; height: 4px; background: var(--bg-soft); border-radius: 2px; overflow: hidden; }
+.track-card-bar-fill { height: 100%; background: var(--accent-color); border-radius: 2px; transition: width 0.3s; }
+
+/* WORKSPACE */
+.workspace-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 100; display: none; align-items: stretch; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeIn 0.2s ease; }
+.workspace-overlay.active { display: flex; }
+[data-theme="dark"] .workspace-overlay { background: rgba(0,0,0,0.7); }
+.workspace { background: var(--bg); margin: auto; width: 100%; max-width: 1200px; height: calc(100vh - 40px); max-height: 900px; border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-lg); border: 1px solid var(--border); animation: slideUp 0.25s ease; }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.ws-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg-elev); gap: 16px; }
+.ws-header-left { flex: 1; min-width: 0; }
+.ws-header-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.ws-title { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; letter-spacing: -0.01em; line-height: 1.2; overflow-wrap: break-word; word-break: break-word; }
+.ws-header-right { display: flex; align-items: center; gap: 8px; }
+.ws-timer { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; padding: 6px 12px; background: var(--bg-soft); border-radius: var(--radius-sm); color: var(--text-soft); }
+.ws-timer.running { background: var(--text); color: var(--bg); }
+.ws-body { flex: 1; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; min-height: 0; }
+.ws-pane { display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
+.ws-pane + .ws-pane { border-left: 1px solid var(--border); }
+.ws-pane-head { padding: 14px 20px; font-size: 11px; font-weight: 600; color: var(--text-mute); letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--bg-elev); }
+.ws-pane-content { flex: 1; overflow-y: auto; padding: 24px; font-size: 14px; line-height: 1.65; }
+.ws-desc { color: var(--text-soft); margin-bottom: 20px; font-size: 14.5px; }
+.ws-open-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: var(--radius-sm); border: none; cursor: pointer; font: inherit; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.15s; margin-bottom: 12px; margin-right: 8px; }
+.ws-open-btn:hover { opacity: 0.85; }
+.ws-tutor-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--c-ppe); color: white; padding: 10px 16px; border-radius: var(--radius-sm); border: none; cursor: pointer; font: inherit; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.15s; margin-bottom: 12px; }
+.ws-tutor-btn:hover { opacity: 0.85; }
+.ws-prompts { background: var(--bg-soft); padding: 16px 18px; border-radius: var(--radius-sm); font-size: 13px; color: var(--text-soft); margin-top: 20px; }
+.ws-prompts h4 { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.ws-prompts ul { margin-left: 16px; }
+.ws-prompts li { margin-bottom: 4px; }
+.ws-notes-area { width: 100%; height: 100%; border: none; background: transparent; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14.5px; line-height: 1.7; resize: none; outline: none; padding: 0; }
+.ws-notes-area::placeholder { color: var(--text-mute); }
+.ws-footer { padding: 14px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--bg-elev); flex-wrap: wrap; gap: 12px; }
+.ws-footer-stats { display: flex; gap: 16px; font-size: 12px; color: var(--text-mute); }
+.ws-footer-stat strong { color: var(--text); font-weight: 600; }
+.ws-footer-actions { display: flex; gap: 8px; }
+
+/* TUTORIAL DIALOG */
+.tutor-dialog { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 150; padding: 20px; }
+.tutor-dialog.active { display: flex; }
+.tutor-content { background: var(--bg); border-radius: var(--radius-lg); max-width: 640px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 32px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+.tutor-content h2 { font-family: 'Instrument Serif', serif; font-size: 28px; margin-bottom: 12px; line-height: 1.1; }
+.tutor-content p { font-size: 14px; color: var(--text-soft); margin-bottom: 16px; }
+.tutor-content pre { background: var(--bg-elev); border: 1px solid var(--border); padding: 16px; border-radius: var(--radius-sm); font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin-bottom: 16px; max-height: 300px; overflow-y: auto; }
+.tutor-content-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+
+/* BUTTONS */
+.btn { font: inherit; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-strong); background: var(--bg-elev); color: var(--text); cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 6px; }
+.btn:hover { background: var(--bg-hover); }
+.btn-primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+.btn-primary:hover { opacity: 0.85; background: var(--text); }
+.btn-success { background: var(--c-history); color: white; border-color: var(--c-history); }
+.btn-success:hover { opacity: 0.85; }
+.btn-ghost { background: transparent; border-color: transparent; color: var(--text-soft); }
+.btn-ghost:hover { background: var(--bg-hover); color: var(--text); }
+
+/* BOOKS */
+.book-list { list-style: none; margin-top: 8px; }
+.book-list li { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px; }
+.book-list li:last-child { border-bottom: none; }
+.book-list a { color: var(--text); text-decoration: none; font-weight: 500; }
+.book-list a:hover { text-decoration: underline; }
+.book-title-row { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.05em; text-transform: uppercase; }
+.tag-free { background: rgba(21, 128, 61, 0.1); color: var(--c-history); }
+.tag-paid { background: var(--bg-soft); color: var(--text-mute); }
+.tag-priority { background: rgba(194, 65, 12, 0.1); color: var(--c-ppe); }
+.tag-bible { background: rgba(190, 24, 93, 0.1); color: var(--c-leaders); }
+
+/* METHOD */
+.method-card { background: var(--bg-elev); border: 1px solid var(--border); padding: 22px 24px; border-radius: var(--radius); margin-bottom: 12px; }
+.method-card-num { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px; color: var(--text-mute); line-height: 1; margin-bottom: 8px; }
+.method-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.method-card p { font-size: 14px; color: var(--text-soft); }
+
+/* TOAST */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text); color: var(--bg); padding: 10px 18px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none; transition: all 0.25s; z-index: 200; box-shadow: var(--shadow); }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* SETTINGS */
+.settings-card { background: var(--bg-elev); border: 1px solid var(--border); padding: 22px 24px; border-radius: var(--radius); margin-bottom: 12px; }
+.settings-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.settings-card .desc { font-size: 13px; color: var(--text-soft); margin-bottom: 14px; }
+.settings-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.settings-row input[type="date"] { font: inherit; font-size: 13px; padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--bg); color: var(--text); }
+.danger-zone { margin-top: 24px; padding: 20px; border: 1px dashed var(--border-strong); border-radius: var(--radius); text-align: center; }
+.danger-zone p { font-size: 13px; color: var(--text-mute); margin-bottom: 12px; }
+
+/* EMPTY */
+.empty { text-align: center; padding: 60px 20px; color: var(--text-mute); }
+.empty-title { font-family: 'Instrument Serif', serif; font-size: 22px; font-style: italic; color: var(--text-soft); margin-bottom: 6px; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .app { padding: 20px 14px 80px; }
+  .topbar { margin-bottom: 20px; }
+  .brand { font-size: 14px; }
+  .date-chip { font-size: 10px; padding: 5px 8px; }
+
+  .hero { margin-bottom: 24px; }
+  .hero-title { font-size: 32px; line-height: 1.1; }
+  .hero-sub { font-size: 14.5px; }
+  .hero-week-tag { font-size: 10px; padding: 3px 8px; margin-bottom: 12px; }
+
+  /* Stats: 2x2 grid on mobile instead of stacked single column */
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat { padding: 12px 14px; }
+  .stat-value { font-size: 26px; }
+  .stat-label { font-size: 10px; }
+
+  /* Phase tracker — keep all 7 visible but tighter */
+  .phase-tracker { grid-template-columns: repeat(7, 1fr); gap: 2px; padding: 4px; }
+  .phase-day { padding: 6px 1px; }
+  .phase-day-name { font-size: 8px; }
+  .phase-day-phase { font-size: 10px; line-height: 1.1; }
+
+  /* Tutorial banner — stack vertically */
+  .tutorial-banner { padding: 14px 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .tutorial-banner-title { font-size: 18px; }
+  .tutorial-banner-sub { font-size: 12.5px; }
+  .tutorial-banner button { width: 100%; justify-content: center; }
+
+  /* Energy bar — vertical stack so buttons don't crowd */
+  .energy { padding: 10px 12px; flex-direction: column; align-items: stretch; gap: 8px; }
+  .energy-btns { width: 100%; justify-content: space-between; }
+  .energy-btn { flex: 1; text-align: center; padding: 8px 6px; font-size: 11.5px; }
+
+  /* Tasks — bigger tap target on the whole row */
+  .task { padding: 14px 14px 14px 12px; gap: 12px; }
+  .task-check { width: 26px; height: 26px; margin-top: 0; }
+  .task.done .task-check::after { width: 6px; height: 11px; }
+  .task-title { font-size: 14.5px; }
+  .task-desc { font-size: 12.5px; }
+  .task-head { gap: 6px; }
+  .task-chev { display: none; }
+
+  /* Nav tabs — compact */
+  .nav { gap: 0; }
+  .nav-item { font-size: 12.5px; padding: 10px 10px; }
+
+  /* Section headers */
+  .sect-h { margin-top: 24px; }
+
+  /* Track grid — single column on mobile (already happens by minmax, but ensure compactness) */
+  .track-grid { grid-template-columns: 1fr; gap: 10px; }
+  .track-card { padding: 16px 18px; }
+  .track-card-title { font-size: 19px; }
+
+  /* Week nav buttons */
+  .week-nav { padding: 10px 12px; }
+  .week-nav-btn { font-size: 12px; padding: 6px 8px; }
+  .week-nav-label .name { font-size: 15px; }
+
+  /* Workspace — full screen on mobile, single column */
+  .ws-body { grid-template-columns: 1fr; }
+  .ws-pane + .ws-pane { border-left: none; border-top: 1px solid var(--border); }
+  .workspace { height: 100vh; max-height: none; border-radius: 0; margin: 0; }
+  .workspace-overlay { padding: 0; }
+  .ws-header { padding: 12px 16px; flex-wrap: wrap; }
+  .ws-title { font-size: 17px; }
+  .ws-pane-content { padding: 16px; font-size: 13.5px; }
+  .ws-pane-head { padding: 12px 16px; }
+  .ws-footer { padding: 10px 14px; gap: 10px; }
+  .ws-footer-stats { gap: 12px; font-size: 11px; }
+  .ws-footer-actions { flex: 1; justify-content: flex-end; }
+  .ws-footer-actions .btn { padding: 8px 12px; font-size: 12.5px; }
+  .ws-open-btn, .ws-tutor-btn { padding: 10px 14px; font-size: 12.5px; }
+
+  /* Tutorial dialog */
+  .tutor-dialog { padding: 12px; }
+  .tutor-content { padding: 20px; max-height: 95vh; }
+  .tutor-content h2 { font-size: 22px; }
+  .tutor-content pre { font-size: 11px; padding: 12px; max-height: 220px; }
+  .tutor-content-actions { flex-direction: column; gap: 6px; }
+  .tutor-content-actions .btn { width: 100%; justify-content: center; }
+
+  /* Prevent iOS auto-zoom on focus — needs 16px minimum on inputs */
+  .ws-notes-area { font-size: 16px; line-height: 1.6; }
+  .settings-row input[type="date"] { font-size: 16px; padding: 10px 12px; }
+
+  /* Settings cards */
+  .settings-card { padding: 18px 18px; }
+  .settings-row { flex-direction: column; align-items: stretch; }
+  .settings-row .btn { width: 100%; justify-content: center; }
+  .settings-row input[type="date"] { width: 100%; }
+
+  /* Method cards */
+  .method-card { padding: 18px 20px; }
+  .method-card p { font-size: 14.5px; line-height: 1.65; }
+  .method-card h3 { font-size: 15.5px; }
+
+  /* Book list — better wrap */
+  .book-list li { flex-wrap: wrap; padding: 10px 0; }
+  .book-list a { font-size: 13.5px; }
+}
+
+/* Very narrow phones — extra tightening */
+@media (max-width: 380px) {
+  .hero-title { font-size: 28px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .stat-value { font-size: 22px; }
+  .phase-day-phase { font-size: 9px; }
+  .nav-item { padding: 9px 8px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="topbar">
+  <div class="brand"><span class="brand-dot"></span> Curriculum</div>
+  <div class="topbar-actions">
+    <span class="date-chip" id="dateChip">—</span>
+    <button class="icon-btn" id="themeToggle" title="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+  </div>
+</div>
+
+<nav class="nav">
+  <button class="nav-item active" data-view="today">Today</button>
+  <button class="nav-item" data-view="week">Week</button>
+  <button class="nav-item" data-view="tracks">Tracks</button>
+  <button class="nav-item" data-view="canon">The Canon</button>
+  <button class="nav-item" data-view="method">Method</button>
+  <button class="nav-item" data-view="settings">Settings</button>
+</nav>
+
+<div class="view active" id="view-today">
+  <div class="hero">
+    <div class="hero-week-tag" id="weekTag">Week —</div>
+    <h1 class="hero-title" id="heroTitle">—</h1>
+    <p class="hero-sub" id="heroSub">—</p>
+  </div>
+
+  <div class="tutorial-banner" id="tutorialBanner">
+    <div class="tutorial-banner-text">
+      <div class="tutorial-banner-label" id="phaseBannerLabel">— Today's mode —</div>
+      <div class="tutorial-banner-title" id="phaseBannerTitle">—</div>
+      <div class="tutorial-banner-sub" id="phaseBannerSub">—</div>
+    </div>
+    <button class="btn btn-primary" id="phaseBannerBtn" style="display: none;">Start tutorial →</button>
+  </div>
+
+  <div class="phase-tracker" id="phaseTracker"></div>
+
+  <div class="stats" id="todayStats"></div>
+
+  <div class="energy">
+    <span class="energy-label">Energy</span>
+    <div class="energy-btns">
+      <button class="energy-btn" data-energy="low">Low · 5min</button>
+      <button class="energy-btn active" data-energy="normal">Normal · 30min</button>
+      <button class="energy-btn" data-energy="high">Deep · 60min+</button>
+    </div>
+  </div>
+
+  <div class="sect-h">
+    <h2>Today's tasks</h2>
+    <span class="meta" id="taskMeta">—</span>
+  </div>
+  <div class="tasks" id="todayTasks"></div>
+</div>
+
+<div class="view" id="view-week">
+  <div class="hero">
+    <div class="hero-week-tag">Week overview</div>
+    <h1 class="hero-title">This <em>week</em></h1>
+  </div>
+  <div class="week-nav">
+    <button class="week-nav-btn" id="prevWeek">← Previous</button>
+    <div class="week-nav-label"><div class="num" id="weekNavNum">—</div><div class="name" id="weekNavName">—</div></div>
+    <button class="week-nav-btn" id="nextWeek">Next →</button>
+  </div>
+  <div class="stats" id="weekStats"></div>
+  <div class="sect-h"><h2>All tasks this week</h2><span class="meta" id="weekTaskMeta">—</span></div>
+  <div class="tasks" id="weekTasks"></div>
+</div>
+
+<div class="view" id="view-tracks">
+  <div class="hero">
+    <div class="hero-week-tag">Fourteen tracks</div>
+    <h1 class="hero-title">The <em>landscape</em></h1>
+    <p class="hero-sub">Click any track to see its full reading list and your progress.</p>
+  </div>
+  <div class="track-grid" id="trackGrid"></div>
+  <div id="trackDetail"></div>
+</div>
+
+<div class="view" id="view-canon">
+  <div class="hero">
+    <div class="hero-week-tag">The OG books</div>
+    <h1 class="hero-title">The <em>canon</em></h1>
+    <p class="hero-sub">The bible texts in each domain. Everything else is a footnote to these.</p>
+  </div>
+  <div id="canonList"></div>
+</div>
+
+<div class="view" id="view-method">
+  <div class="hero">
+    <div class="hero-week-tag">The Oxford method</div>
+    <h1 class="hero-title">How to <em>actually</em> learn</h1>
+    <p class="hero-sub">Reading is intake. Writing is processing. Defending aloud is what makes it stick.</p>
+  </div>
+  <div id="methodList"></div>
+</div>
+
+<div class="view" id="view-settings">
+  <div class="hero">
+    <div class="hero-week-tag">Configuration</div>
+    <h1 class="hero-title">Settings</h1>
+  </div>
+  <div class="settings-card">
+    <h3>Curriculum status</h3>
+    <p class="desc"><strong id="currentStartDisplay">—</strong><br><br>The app is <strong>pace-adaptive</strong>: weeks advance when you complete the Saturday tutorial, not on a fixed calendar. You can also advance manually or jump ahead from the Week tab.</p>
+    <div class="settings-row">
+      <input type="date" id="startDateInput">
+      <button class="btn btn-primary" id="saveStartBtn">Save</button>
+      <button class="btn" id="todayStartBtn">Reset to today</button>
+    </div>
+  </div>
+  <div class="settings-card">
+    <h3>Export & backup</h3>
+    <p class="desc">All data lives in your browser. Export to back up or move to another device.</p>
+    <div class="settings-row">
+      <button class="btn" id="exportNotesBtn">Notes (Markdown)</button>
+      <button class="btn" id="exportDataBtn">Backup data (JSON)</button>
+      <label class="btn" style="cursor: pointer;">
+        Import data
+        <input type="file" id="importInput" accept=".json" style="display: none;">
+      </label>
+    </div>
+  </div>
+  <div class="settings-card">
+    <h3>About</h3>
+    <p class="desc">Standalone web app. All data lives in browser localStorage — nothing leaves your device. To use across devices: host on Netlify/Vercel/GitHub Pages, then export/import JSON between devices.</p>
+  </div>
+  <div class="danger-zone">
+    <p>Reset all progress, notes, and timers. Cannot be undone.</p>
+    <button class="btn" id="resetBtn" style="border-color: var(--c-ppe); color: var(--c-ppe);">Reset everything</button>
+  </div>
+</div>
+
+<div class="workspace-overlay" id="workspaceOverlay">
+  <div class="workspace">
+    <div class="ws-header">
+      <div class="ws-header-left">
+        <div class="ws-header-meta">
+          <span class="task-track" id="wsTrack">—</span>
+          <span class="task-duration" id="wsDuration">—</span>
+          <span id="wsTutorialBadge" style="display: none;" class="task-tutorial-tag">Tutorial day</span>
+        </div>
+        <div class="ws-title" id="wsTitle">—</div>
+      </div>
+      <div class="ws-header-right">
+        <div class="ws-timer" id="wsTimer">00:00</div>
+        <button class="icon-btn" id="wsClose" title="Close">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="ws-body">
+      <div class="ws-pane">
+        <div class="ws-pane-head">
+          <span id="wsLeftLabel">The reading</span>
+          <button class="btn-ghost btn" id="wsTimerToggle" style="padding: 2px 8px; font-size: 11px;">Start timer</button>
+        </div>
+        <div class="ws-pane-content" id="wsLeft"></div>
+      </div>
+      <div class="ws-pane">
+        <div class="ws-pane-head">
+          <span id="wsRightLabel">Your notes</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute);">Autosaved</span>
+        </div>
+        <div class="ws-pane-content">
+          <textarea class="ws-notes-area" id="wsNotes" placeholder="Annotate as you read. Your notes save automatically."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="ws-footer">
+      <div class="ws-footer-stats">
+        <span class="ws-footer-stat"><strong id="wsWords">0</strong> words</span>
+        <span class="ws-footer-stat"><strong id="wsTime">0</strong> min spent</span>
+      </div>
+      <div class="ws-footer-actions">
+        <button class="btn btn-ghost" id="wsCloseBtn">Close</button>
+        <button class="btn" id="wsTutorBtn" style="display: none;">Open hostile tutor →</button>
+        <button class="btn btn-success" id="wsMarkDone">Mark complete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tutor-dialog" id="tutorDialog">
+  <div class="tutor-content">
+    <h2 style="font-family: 'Instrument Serif', serif;"><em>The hostile tutor</em></h2>
+    <p>This prompt is ready to paste into Claude. It'll simulate an Oxford tutor who has read your essay and intends to dismantle it. You will defend, in real time, for ten exchanges. This is the closest substitute for a real tutorial that exists today — and the single highest-leverage thing in this whole curriculum.</p>
+    <pre id="tutorPromptText">—</pre>
+    <div class="tutor-content-actions">
+      <button class="btn btn-primary" id="copyTutorBtn">Copy prompt</button>
+      <a href="https://claude.ai/new" target="_blank" class="btn btn-success">Open Claude →</a>
+      <button class="btn btn-ghost" id="closeTutorDialog">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">—</div>
+</div>
+
+<script>
+/* ============ TRACKS ============ */
+const TRACKS = {
+  ppe: { name: 'PPE', full: 'Philosophy, Politics & Economics', sub: 'The Oxford analytical backbone', freq: '2/week' },
+  briefing: { name: 'Briefing', full: 'Daily Briefing', sub: 'FT, Economist, Atlantic — the educated reader', freq: 'Daily, 5 min' },
+  tamil: { name: 'Tamil', full: 'Tamil Literature', sub: 'One Kural daily + Sangam deep reading weekly', freq: 'Daily, 10 min' },
+  history: { name: 'History', full: 'World History', sub: 'Mediterranean, Islam, Europe, Asia, Indian — the long view', freq: '1/week' },
+  greek: { name: 'Greek', full: 'Greek Philosophy & Letters', sub: 'The source code of Western thought', freq: '1/week' },
+  latin: { name: 'Latin', full: 'Latin', sub: 'Grammar, Caesar, Catullus, Cicero — the inscriptions you read aloud', freq: '2/week, 15 min' },
+  code: { name: 'Code', full: 'Code in the Age of AI', sub: 'Python, LLMs, agents', freq: 'Daily' },
+  leaders: { name: 'Leaders', full: 'Great Lives', sub: 'Biographies and memoirs', freq: '1/week' },
+  tamilthought: { name: 'Indian Thought', full: 'Tamil & Indian Thought', sub: 'Periyar, Ambedkar, Gandhi, Bharati', freq: '1/week' },
+  business: { name: 'Business', full: 'Leadership & Business', sub: "The technical CEO's reading", freq: '1/week' },
+  science: { name: 'Science', full: 'Science & Decisions', sub: 'Feynman, Sagan, Kahneman, Munger', freq: '1/week' },
+  finance: { name: 'Finance', full: 'Finance & Investing', sub: 'Graham, Buffett, Marks, Taleb', freq: '1/week' },
+  letters: { name: 'Letters', full: 'Letters & Fiction', sub: 'Didion, Morrison, Ishiguro, Ephron', freq: '1/week' },
+  storytelling: { name: 'Storytelling', full: 'Storytelling & Narration', sub: 'Sedaris, The Moth, Caitlin Moran — the dinner-party voice', freq: '1/week' },
+  strategy: { name: 'Strategy', full: 'Strategy & Power', sub: 'Sun Tzu, Clausewitz, Porter, Rumelt', freq: '1/week' },
+  productivity: { name: 'Habits', full: 'Productivity & Habits', sub: 'Covey, Newport, Clear, Allen', freq: '1/week' },
+  becoming: { name: 'Becoming', full: 'Becoming Her', sub: 'Daily immersion in the sensibility you want', freq: 'Daily' }
+};
+
+/* The Oxford PPE weekly cycle:
+   MON = Read primary text 1
+   TUE = Read primary text 2 + notes
+   WED = Essay scaffolding (thesis, structure, key arguments)
+   THU = Draft full essay
+   FRI = Polish essay
+   SAT = TUTORIAL DAY — defend aloud, then hostile tutor
+   SUN = Review, steelman, recitation, plan
+*/
+const PHASES = {
+  0: { name: 'Review', desc: 'Recite, steelman, plan the week', icon: '↻' },        // Sun
+  1: { name: 'Read I', desc: 'Primary text — slow, focused', icon: '◉' },          // Mon
+  2: { name: 'Read II', desc: 'Second text + argument map', icon: '◉' },           // Tue
+  3: { name: 'Scaffold', desc: 'Essay thesis + structure', icon: '✎' },            // Wed
+  4: { name: 'Draft', desc: 'Write the full essay', icon: '✎' },                   // Thu
+  5: { name: 'Polish', desc: 'Refine + read aloud', icon: '✎' },                   // Fri
+  6: { name: 'Tutorial', desc: 'Defend aloud with hostile tutor', icon: '⚔' }     // Sat
+};
+
+const WEEKS = [
+  {
+    n: 1, theme: 'Setting out — the foundations',
+    intro: "Week one. Don't try to be perfect. The point is to begin.",
+    essayQuestion: "What is Russell's strongest argument for distinguishing appearance from reality? And where would a determined sceptic push back hardest?",
+    essayContext: "This week you've read Russell on appearance vs reality and Plato's Apology. Your essay should engage primarily with Russell, but you may draw on Socrates's method.",
+    tasks: [
+      { track: 'ppe', day: 1, title: 'Russell — Problems of Philosophy, Ch. 1', desc: '"Appearance and Reality" — slow down on the table example. Mark the central claim, the supporting reasons, and where Russell\'s argument is weakest.', url: 'https://www.gutenberg.org/files/5827/5827-h/5827-h.htm', mins: 30, energy: 'normal', priority: true, prompts: ['What is Russell\'s central claim?', 'Where does a naive realist push back?', 'How would Russell respond to that pushback?'] },
+      { track: 'greek', day: 2, title: 'Plato — Apology (first half)', desc: 'Socrates on trial. Pay attention to rhetorical structure — how he handles each charge.', url: 'https://www.gutenberg.org/files/1656/1656-h/1656-h.htm', mins: 25, energy: 'normal', priority: true },
+      { track: 'ppe', day: 3, title: 'Scaffold your essay (15 min)', desc: 'Open a doc. Write: (1) Your thesis in one sentence. (2) Three supporting arguments in one line each. (3) The strongest counter-argument. Don\'t write paragraphs yet — just the skeleton.', mins: 20, energy: 'low', priority: true },
+      { track: 'ppe', day: 4, title: 'Draft the essay (45 min)', desc: 'Write 1000-1500 words. Don\'t edit as you go — just get it down. Open the workspace here to draft.', mins: 60, energy: 'high', priority: true },
+      { track: 'ppe', day: 5, title: 'Polish + read aloud', desc: 'Read your essay aloud to yourself. Where you stumble, the argument is unclear. Rewrite those paragraphs. Cut 10% of the length.', mins: 30, energy: 'normal', priority: true },
+      { track: 'ppe', day: 6, title: '⚔ TUTORIAL — defend your essay', desc: 'Paste your essay into Claude with the hostile-tutor prompt. Defend for at least 10 exchanges. Use the "Open hostile tutor" button.', mins: 45, energy: 'high', priority: true, isTutorial: true },
+      { track: 'ppe', day: 0, title: 'Sunday review', desc: 'Re-read what you wrote. What is the single strongest sentence? What is the single weakest? Plan next week\'s reading.', mins: 20, energy: 'low' },
+
+      { track: 'becoming', day: 1, title: 'Joan Didion — "On Self-Respect"', desc: 'Three pages of perfect prose. Read once for content. Read once for rhythm. Notice the sentence lengths. This is the template.', url: 'https://www.vogue.com/article/joan-didion-self-respect-essay-1961', mins: 15, energy: 'low' },
+      { track: 'becoming', day: 2, title: 'Anne Lamott — Bird by Bird, Preface + Ch. 1', desc: 'The kindest writing manual ever. Read like medicine. The "one-inch picture frame" idea is life-changing.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 3, title: 'Carol Dweck — Mindset Ch. 1-2', desc: 'The fixed vs growth mindset distinction. Read until you can hear yourself in both descriptions. The shift to growth is mostly about catching the fixed voice.', mins: 25, energy: 'low' },
+      { track: 'becoming', day: 4, title: 'Elizabeth Gilbert — Big Magic Part I', desc: 'Read in bed. The book is a permission slip. The point is to make work that scares you.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 5, title: 'Brené Brown — Daring Greatly Ch. 1', desc: 'The vulnerability research. Pay attention to the Roosevelt quote at the start. Memorise the last sentence.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 6, title: 'Phoebe Waller-Bridge — Fleabag (watch one episode)', desc: 'Yes — TV counts when it\'s this good. Watch S1 E1. Pay attention to the timing, the asides to camera, what makes the wit land. This is what witty sounds like.', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 0, title: 'Naval — Almanack (read at random for 15 min)', desc: 'The book is designed to be opened anywhere. Read 15 min before bed. Highlight one line.', url: 'https://www.navalmanack.com/', mins: 15, energy: 'low' },
+
+      { track: 'code', day: 1, title: 'Python Day 1 — install + hello world', desc: 'Use replit.com (no install) or install Python locally. Write a hello-world script. Type every character. Don\'t copy-paste.', url: 'https://automatetheboringstuff.com/2e/chapter1/', mins: 15, energy: 'low' },
+      { track: 'code', day: 2, title: 'Python — variables, types', desc: 'Continue Automate Ch. 1. Build a name-greeter that asks your name and greets you.', mins: 15, energy: 'low' },
+      { track: 'code', day: 3, title: 'Python — flow control intro', desc: 'Start Automate Ch. 2. If/else.', mins: 15, energy: 'low' },
+      { track: 'code', day: 4, title: 'Python — loops', desc: 'Continue Ch. 2. While and for loops. Build a number-guessing game.', mins: 15, energy: 'normal' },
+      { track: 'code', day: 5, title: 'Python — review week 1', desc: 'Look back at this week. Write a one-page note: what did I learn, what confused me, what would I build with this so far?', mins: 15, energy: 'low' },
+
+      { track: 'tamil', day: 2, title: 'Tirukkural — first 10 chapters', desc: 'Couplets 1-100. The opening on God, rain, the ascetic, virtue. Read aloud where possible.', url: 'https://en.wikisource.org/wiki/Tirukkural_(English_translations)/G._U._Pope', mins: 25, energy: 'normal' },
+      { track: 'history', day: 5, title: 'Mary Beard — SPQR, opening', desc: 'Begin Rome — the foundational European civilisation. Beard\'s opening on Cicero and Catiline is brilliant prose. Pay attention to how she handles the sources.', mins: 35, energy: 'normal' },
+      { track: 'leaders', day: 0, title: 'Obama — A Promised Land, Prologue', desc: 'Sunday reading. The opening of a serious memoir.', mins: 30, energy: 'low' },
+      { track: 'tamilthought', day: 4, title: 'Periyar — Why Were Women Enslaved? (selections)', desc: 'UNESCO called him "the Socrates of South Asia". His clearest essay on patriarchy.', url: 'https://thesatyashodhak.com/wp-content/uploads/2020/05/Collected-Works-Periyar-E-V-Ramasamy-Collected-Works-of-Periyar-E-V-R-The-Periyar-Self-Respect-Propaganda-Institution-9380826435.pdf', mins: 25, energy: 'normal' },
+      { track: 'business', day: 3, title: 'Bezos — 1997 Shareholder Letter', desc: 'The founding document of long-term thinking. Six pages. Read three times across the day.', url: 'https://www.aboutamazon.com/news/company-news/amazons-original-1997-letter-to-shareholders', mins: 15, energy: 'low' },
+      { track: 'finance', day: 5, title: 'Buffett — 1977 Shareholder Letter', desc: 'Read one early Berkshire letter. Plain English, deep ideas. The voice that defined American capital.', url: 'https://www.berkshirehathaway.com/letters/1977.html', mins: 25, energy: 'low' },
+      { track: 'letters', day: 2, title: 'Nora Ephron — "A Few Words About Breasts"', desc: 'Esquire 1972. The female personal essay that pre-empted everything since.', url: 'https://www.esquire.com/lifestyle/a586/few-words-about-breasts-ephron/', mins: 20, energy: 'low' },
+      { track: 'strategy', day: 4, title: 'Sun Tzu — Art of War Ch. 1-3', desc: 'The OG strategy text. Aphoristic — re-read each chapter twice.', url: 'https://www.gutenberg.org/files/132/132-h/132-h.htm', mins: 25, energy: 'normal' },
+      { track: 'productivity', day: 5, title: 'Covey — 7 Habits Habit 1 (Be Proactive)', desc: 'The habit everyone skips. Don\'t. The distinction between circle of concern and circle of influence is the foundation of agency.', mins: 25, energy: 'low' },
+      { track: 'science', day: 0, title: 'Feynman — Pleasure of Finding Things Out', desc: 'Sunday wind-down. Watch the talk or read the essay.', url: 'https://www.youtube.com/watch?v=Bgaw9qe7DEE', mins: 20, energy: 'low' }
+    ]
+  },
+  {
+    n: 2, theme: 'What is the good life?',
+    intro: 'Three ancient traditions on virtue, and the modern utilitarian challenge.',
+    essayQuestion: "Is the utilitarian's account of the good life convincing? Where does Mill succeed in answering objections, and where does he fail?",
+    essayContext: "You've read Mill on utilitarianism, Aristotle on eudaimonia (later this week), and the Tirukkural on virtue. The essay should engage primarily with Mill but may draw on either tradition.",
+    tasks: [
+      { track: 'ppe', day: 1, title: 'Mill — Utilitarianism Ch. 1-2', desc: 'Foundational text. Pay close attention to higher vs lower pleasures.', url: 'https://www.gutenberg.org/files/11224/11224-h/11224-h.htm', mins: 35, energy: 'normal', priority: true },
+      { track: 'greek', day: 2, title: 'Aristotle — Nicomachean Ethics Bk I', desc: 'Eudaimonia — flourishing. The opposite move from utilitarianism.', url: 'https://www.gutenberg.org/files/8438/8438-h/8438-h.htm', mins: 35, energy: 'high', priority: true },
+      { track: 'ppe', day: 3, title: 'Scaffold essay — Mill vs Aristotle', desc: 'Write your thesis. Pick a side. Three arguments. The strongest counter from the other side. Skeleton only.', mins: 20, energy: 'low', priority: true },
+      { track: 'ppe', day: 4, title: 'Draft full essay (1200-1500 words)', desc: 'Don\'t edit as you write. Make the case.', mins: 60, energy: 'high', priority: true },
+      { track: 'ppe', day: 5, title: 'Polish + read aloud', desc: 'Read aloud. Cut the weak sentences.', mins: 30, energy: 'normal', priority: true },
+      { track: 'ppe', day: 6, title: '⚔ TUTORIAL — defend your essay', desc: 'Hostile tutor mode. Defend for 10 exchanges.', mins: 45, energy: 'high', priority: true, isTutorial: true },
+      { track: 'ppe', day: 0, title: 'Sunday review + steelman', desc: 'Record yourself giving the OPPOSING view for 4 minutes. Watch back. Was your steelman as strong as your own argument?', mins: 25, energy: 'low' },
+
+      { track: 'becoming', day: 1, title: 'Susan Cain — Quiet, intro', desc: 'For introverts who have been told to be otherwise. Permission and tools.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 2, title: 'Glennon Doyle — Untamed, opening chapters', desc: 'Read the first 30 pages. The "cheetah" passage is famous for a reason. Read like a love letter to your own audacity.', mins: 25, energy: 'low' },
+      { track: 'becoming', day: 3, title: 'Brené Brown — Daring Greatly Ch. 2-3', desc: 'Shame and vulnerability. Practical, research-backed, kind.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 4, title: 'Sally Rooney — Normal People (first 30 pages)', desc: 'Start the novel. Pay attention to how Rooney writes intelligence and self-consciousness in young women.', mins: 35, energy: 'low' },
+      { track: 'becoming', day: 5, title: 'Bronnie Ware — Top Five Regrets of the Dying, intro', desc: 'A palliative-care nurse on what people regret at the end. The clearest mirror you will ever read.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 6, title: 'Fleabag S1 E2', desc: 'Continue. Notice when Phoebe Waller-Bridge breaks the fourth wall and why. The wit lives in the structure.', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 0, title: 'Naval — read 15 min at random', desc: 'Highlight one line. Tweet it (or just save it).', url: 'https://www.navalmanack.com/', mins: 15, energy: 'low' },
+
+      { track: 'code', day: 1, title: 'Python — flow control complete (Ch. 2)', desc: 'Finish Automate Ch. 2. Build the guessing game properly.', url: 'https://automatetheboringstuff.com/2e/chapter2/', mins: 20, energy: 'normal' },
+      { track: 'code', day: 2, title: 'Python — functions', desc: 'Ch. 3. Write a function that takes a list and returns the average.', mins: 20, energy: 'normal' },
+      { track: 'code', day: 3, title: 'Python — practice problems', desc: 'Pick 3 problems from exercism.io or codewars.com (Python, easy). Solve.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 4, title: 'Python — Ch. 4 (lists)', desc: 'Lists are the workhorse data structure. Read and try every example.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 5, title: 'Python — review + small project', desc: 'Build a script that reads a text file and prints the 10 most common words. Use what you\'ve learned so far.', mins: 30, energy: 'high' },
+
+      { track: 'tamil', day: 2, title: 'Tirukkural chs. 11-38', desc: 'The rest of Aram. Memorise three kurals this week.', url: 'https://en.wikisource.org/wiki/Tirukkural_(English_translations)/G._U._Pope', mins: 30, energy: 'normal' },
+      { track: 'history', day: 5, title: 'John Keay — India: A History, Intro + Ch. 1', desc: 'India in parallel with Rome — Indus Valley civilisation, the early Aryan period. Note how Keay handles a different historiographical tradition.', mins: 35, energy: 'normal' },
+      { track: 'leaders', day: 0, title: 'Obama — A Promised Land Ch. 1-2', desc: 'Early life and political awakening.', mins: 30, energy: 'low' },
+      { track: 'tamilthought', day: 4, title: 'Periyar — on rationalism', desc: 'Selected speeches. Compare directly with Mill\'s liberalism this week.', mins: 25, energy: 'normal' },
+      { track: 'business', day: 3, title: 'Andy Grove — High Output Management Ch. 1-2', desc: 'The book Bezos made executives read. A manager\'s output is their team\'s output.', mins: 25, energy: 'normal' },
+      { track: 'finance', day: 5, title: 'Graham — Intelligent Investor Ch. 1', desc: 'Mr Market is in Ch. 8. But start with Ch. 1 — the investor\'s worst enemy is herself.', mins: 30, energy: 'normal' },
+      { track: 'letters', day: 2, title: 'Toni Morrison — Nobel Lecture (1993)', desc: '"We die. That may be the meaning of life. But we do language. That may be the measure of our lives."', url: 'https://www.nobelprize.org/prizes/literature/1993/morrison/lecture/', mins: 20, energy: 'low' },
+      { track: 'strategy', day: 4, title: 'Sun Tzu Ch. 4-6', desc: 'Energy, weak/strong. The chapters most quoted in business strategy.', mins: 20, energy: 'normal' },
+      { track: 'productivity', day: 5, title: 'Cal Newport — Deep Work intro + Ch. 1', desc: 'The case for focused effort in a distracted age.', mins: 30, energy: 'normal' },
+      { track: 'science', day: 0, title: 'Kahneman — Thinking Fast and Slow Ch. 1-2', desc: 'System 1 and System 2. The single most useful mental model.', mins: 30, energy: 'low' }
+    ]
+  },
+  {
+    n: 3, theme: 'Justice — three ancient frameworks',
+    intro: 'Plato, Thiruvalluvar, Periyar — each on what justice means.',
+    essayQuestion: "Is Thrasymachus right that justice is the advantage of the stronger? If not, on what grounds do we reject him?",
+    essayContext: "You've read Republic Books I-II. The essay should engage directly with the Thrasymachus challenge and show how (or whether) Socrates's response succeeds.",
+    tasks: [
+      { track: 'ppe', day: 1, title: 'Plato — Republic Book I', desc: 'The Thrasymachus challenge. Socrates\'s opening response.', url: 'https://www.gutenberg.org/files/1497/1497-h/1497-h.htm', mins: 40, energy: 'high', priority: true },
+      { track: 'ppe', day: 2, title: 'Plato — Republic Book II', desc: 'Glaucon and Adeimantus reformulate the challenge. The ring of Gyges. Why be just?', mins: 35, energy: 'high', priority: true },
+      { track: 'ppe', day: 3, title: 'Scaffold your essay', desc: 'Thesis. Three arguments. Strongest counter. Skeleton only.', mins: 20, energy: 'low', priority: true },
+      { track: 'ppe', day: 4, title: 'Draft full essay', desc: '1200-1500 words. Make Socrates\'s case work, OR explain why Thrasymachus is right.', mins: 60, energy: 'high', priority: true },
+      { track: 'ppe', day: 5, title: 'Polish + read aloud', desc: 'Cut weak sentences. Make sure every paragraph earns its place.', mins: 30, energy: 'normal', priority: true },
+      { track: 'ppe', day: 6, title: '⚔ TUTORIAL — defend your essay', desc: 'Hostile tutor. 10 exchanges. Don\'t flinch.', mins: 45, energy: 'high', priority: true, isTutorial: true },
+      { track: 'ppe', day: 0, title: 'Review — what would Periyar say?', desc: 'Reflect: how would Periyar (whom you read this week) attack Plato? Write 300 words. Don\'t look it up.', mins: 25, energy: 'low' },
+
+      { track: 'becoming', day: 1, title: 'Sally Rooney — Normal People (continue)', desc: 'Read 50-100 pages. Notice the dialogue. Note how silence carries weight.', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 2, title: 'Cheryl Strayed — Tiny Beautiful Things, opening', desc: 'The "Dear Sugar" advice column collected. Read like letters from your wisest older sister.', mins: 25, energy: 'low' },
+      { track: 'becoming', day: 3, title: 'Sheryl Sandberg — Lean In Ch. 1', desc: 'The "sit at the table" chapter. Imperfect book; useful provocation.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 4, title: 'Mary Oliver — selected poems', desc: 'Read aloud: "Wild Geese", "The Summer Day", "When Death Comes". Three poems, three deep breaths. Free online.', url: 'https://www.poetryfoundation.org/poets/mary-oliver', mins: 15, energy: 'low' },
+      { track: 'becoming', day: 5, title: 'Big Magic Part II — Enchantment', desc: 'The chapter on fear vs creativity. The most-quoted passage in modern self-help, deservedly.', mins: 25, energy: 'low' },
+      { track: 'becoming', day: 6, title: 'Fleabag S1 E3-4', desc: 'Continue. By now you\'re absorbing the rhythm without trying. That\'s the point.', mins: 40, energy: 'low' },
+      { track: 'becoming', day: 0, title: 'Mindset Ch. 3-4 (Inside Your Mindset)', desc: 'Read in bed. Notice your own self-talk as you read.', mins: 20, energy: 'low' },
+
+      { track: 'code', day: 1, title: 'Python Ch. 5 — dictionaries', desc: 'Dictionaries are how data actually gets structured. Build a contacts dict.', url: 'https://automatetheboringstuff.com/2e/chapter5/', mins: 25, energy: 'normal' },
+      { track: 'code', day: 2, title: 'Python practice — 3 problems', desc: 'Pick 3 easy Python problems on exercism.io. Solve.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 3, title: 'Python — Ch. 6 (strings)', desc: 'String manipulation. Vital for almost any real script.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 4, title: 'Python project — daily word counter', desc: 'Build a script that reads a Markdown file (your essay) and reports: word count, average sentence length, longest sentence.', mins: 35, energy: 'high' },
+      { track: 'code', day: 5, title: 'Code review + reflect', desc: 'Look at the code you wrote this week. What would you do differently? Write 100 words.', mins: 15, energy: 'low' },
+
+      { track: 'tamil', day: 2, title: 'Tirukkural Book II — kingship (chs. 39-55)', desc: 'On the duties of rulers, justice, the use of force. Compare directly with Plato this week.', mins: 30, energy: 'normal' },
+      { track: 'history', day: 5, title: 'Norman Davies — Europe: A History, opening', desc: 'Begin the great sweep — Europe from the Greeks to today. Davies\'s prologue is a masterpiece of historical writing.', mins: 30, energy: 'normal' },
+      { track: 'leaders', day: 0, title: 'Mandela — Long Walk to Freedom (early)', desc: 'Childhood in the Transkei. How he learned authority and dignity.', mins: 30, energy: 'low' },
+      { track: 'tamilthought', day: 4, title: 'Ambedkar — Annihilation of Caste §§1-5', desc: 'The undelivered 1936 speech. The single most important critique of caste ever written.', url: 'https://ccnmtl.columbia.edu/projects/mmt/ambedkar/web/readings/aoc_print_2004.pdf', mins: 35, energy: 'high' },
+      { track: 'business', day: 3, title: 'Horowitz — The Hard Thing About Hard Things Ch. 1-2', desc: 'The most honest book on what running a company actually feels like.', mins: 30, energy: 'normal' },
+      { track: 'finance', day: 5, title: 'Graham — Intelligent Investor Ch. 8 (Mr Market)', desc: 'Skip ahead. The single most important parable in investment history.', mins: 25, energy: 'normal' },
+      { track: 'letters', day: 2, title: 'Joan Didion — "Goodbye to All That"', desc: 'On leaving New York. The template for a hundred imitators, none as good.', url: 'https://genius.com/Joan-didion-goodbye-to-all-that-annotated', mins: 25, energy: 'low' },
+      { track: 'strategy', day: 4, title: 'Clausewitz — On War Bk I Ch. 1', desc: 'War as the continuation of politics. The single most important chapter in strategic theory.', url: 'https://www.gutenberg.org/files/1946/1946-h/1946-h.htm', mins: 30, energy: 'high' },
+      { track: 'productivity', day: 5, title: 'Clear — Atomic Habits Ch. 1-3', desc: 'The 1% better principle. The modern operating manual for habit change.', mins: 25, energy: 'low' },
+      { track: 'science', day: 0, title: 'Kahneman Ch. 3-5', desc: 'The lazy controller, the associative machine. Why we are bad at thinking.', mins: 30, energy: 'low' }
+    ]
+  },
+  {
+    n: 4, theme: 'Power — the state and its discontents',
+    intro: 'Hobbes, Thucydides, Machiavelli theorise raw power. Then we read those who resisted it.',
+    essayQuestion: "Is Hobbes's case for the absolute sovereign defensible? Locate the weakest premise in his argument.",
+    essayContext: "You've read Leviathan Ch. 13-15 and the Funeral Oration. Engage primarily with Hobbes; the Athenian counterexample is useful for the counter-argument.",
+    tasks: [
+      { track: 'ppe', day: 1, title: 'Hobbes — Leviathan Ch. 13', desc: 'The state of nature. "Solitary, poor, nasty, brutish, and short." Read slowly — every word counts.', url: 'https://www.gutenberg.org/files/3207/3207-h/3207-h.htm', mins: 30, energy: 'high', priority: true },
+      { track: 'ppe', day: 2, title: 'Hobbes — Leviathan Ch. 14-15', desc: 'The laws of nature. The social contract. The case for absolute sovereignty.', mins: 35, energy: 'high', priority: true },
+      { track: 'ppe', day: 3, title: 'Scaffold your essay', desc: 'Thesis: which Hobbesian premise is weakest? Three arguments why. Strongest defence from Hobbes.', mins: 20, energy: 'low', priority: true },
+      { track: 'ppe', day: 4, title: 'Draft essay', desc: '1200-1500 words. Locate the weak premise. Make the case.', mins: 60, energy: 'high', priority: true },
+      { track: 'ppe', day: 5, title: 'Polish + read aloud', desc: 'Where you stumble, the argument is unclear.', mins: 30, energy: 'normal', priority: true },
+      { track: 'ppe', day: 6, title: '⚔ TUTORIAL — defend your essay', desc: '10 exchanges with hostile tutor.', mins: 45, energy: 'high', priority: true, isTutorial: true },
+      { track: 'ppe', day: 0, title: 'Steelman drill', desc: 'Record yourself for 4 min defending Hobbes as forcefully as possible. Watch back. Was the steelman strong?', mins: 25, energy: 'low' },
+
+      { track: 'becoming', day: 1, title: 'Normal People — finish', desc: 'Finish the novel if you haven\'t. The ending lands differently when you\'re paying attention to silences.', mins: 35, energy: 'low' },
+      { track: 'becoming', day: 2, title: 'Sheila Heti — How Should a Person Be? (first 50 pages)', desc: 'The book that pioneered a new kind of female interiority. Read like a recipe for permission.', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 3, title: 'Brené Brown — Daring Greatly Ch. 4-5', desc: 'On boundaries, criticism, the arena.', mins: 25, energy: 'low' },
+      { track: 'becoming', day: 4, title: 'Olivia Laing — The Lonely City, opening', desc: 'Beautiful book on loneliness, art, and New York. Read for the prose as much as the ideas.', mins: 25, energy: 'low' },
+      { track: 'becoming', day: 5, title: 'Naval — read 30 min', desc: 'A bigger block this week. Read the section on wealth.', url: 'https://www.navalmanack.com/', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 6, title: 'Fleabag S1 E5-6', desc: 'Finish season 1. The therapist scene in particular — notice how comedy reveals truth.', mins: 45, energy: 'low' },
+      { track: 'becoming', day: 0, title: 'Mindset Ch. 5-6', desc: 'Mindsets in business, sport, relationships. Pick the chapter relevant to you this week.', mins: 25, energy: 'low' },
+
+      { track: 'code', day: 1, title: 'Python Ch. 7 — regex', desc: 'Regex is a superpower. The learning curve is steep; the payoff is enormous.', url: 'https://automatetheboringstuff.com/2e/chapter7/', mins: 30, energy: 'high' },
+      { track: 'code', day: 2, title: 'Regex practice', desc: 'Use regexr.com. Solve 5 challenges. Don\'t look up answers.', mins: 25, energy: 'high' },
+      { track: 'code', day: 3, title: 'Python Ch. 8 — file I/O', desc: 'Read and write files. The bridge between scripts and real data.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 4, title: 'Project — note organiser', desc: 'Build a script that reads all .md files in a folder and creates an index. Use what you\'ve learned: files, dicts, lists, regex.', mins: 40, energy: 'high' },
+      { track: 'code', day: 5, title: 'Reflect on the project', desc: 'Write 200 words. What was hard? What would you build next?', mins: 15, energy: 'low' },
+
+      { track: 'greek', day: 2, title: 'Thucydides — Funeral Oration (Bk II)', desc: 'Pericles on Athenian democracy. A founding text of political rhetoric.', url: 'https://www.gutenberg.org/files/7142/7142-h/7142-h.htm', mins: 25, energy: 'normal' },
+      { track: 'tamil', day: 3, title: 'Tirukkural — ministers (chs. 64-73)', desc: 'On advisors, court speech, what to avoid in a minister.', mins: 25, energy: 'normal' },
+      { track: 'history', day: 5, title: 'Peter Frankopan — The Silk Roads, opening', desc: 'The book that re-centres history away from Europe. Central Asia as the actual centre of the world for most of history.', mins: 30, energy: 'normal' },
+      { track: 'leaders', day: 0, title: 'Mandela — Rivonia trial chapters', desc: '"I have cherished the ideal of a democratic and free society..." The speech from the dock.', mins: 30, energy: 'low' },
+      { track: 'tamilthought', day: 4, title: 'Ambedkar — Annihilation of Caste §§6-15', desc: 'The core argument. Caste cannot be reformed, only annihilated.', mins: 35, energy: 'high' },
+      { track: 'business', day: 3, title: 'Horowitz — Hard Things Ch. 3-4', desc: 'War-time vs peace-time leadership.', mins: 30, energy: 'normal' },
+      { track: 'finance', day: 5, title: 'Marks — The Most Important Thing Ch. 1-3', desc: 'Second-level thinking. Buffett: "When I see memos from Howard Marks, they\'re the first thing I open."', mins: 30, energy: 'normal' },
+      { track: 'letters', day: 2, title: 'Didion — On Keeping a Notebook', desc: 'Another short Didion essay. On memory, identity, why we record.', url: 'https://www.uc.utah.edu/~cl2074/Notebook.pdf', mins: 20, energy: 'low' },
+      { track: 'strategy', day: 4, title: 'Machiavelli — The Prince Ch. 15-18', desc: 'Cruelty, fear, keeping one\'s word. Read with discomfort.', url: 'https://www.gutenberg.org/files/1232/1232-h/1232-h.htm', mins: 25, energy: 'normal' },
+      { track: 'productivity', day: 5, title: 'David Allen — GTD intro', desc: 'The OG productivity system. The "weekly review" idea is what you actually need.', mins: 25, energy: 'low' },
+      { track: 'science', day: 0, title: 'Kahneman Ch. 6-9', desc: 'Anchoring, availability heuristic, substitution.', mins: 30, energy: 'low' }
+    ]
+  }
+];
+
+/* For weeks 5-12, we use a more compact format (same shape) */
+const LATER_WEEKS_TEMPLATE = [
+  {
+    n: 5, theme: 'Liberty',
+    intro: 'Mill, Berlin, Periyar, Ambedkar — each defines freedom differently.',
+    essayQuestion: "Is Mill's harm principle defensible? What counts as harm, and to whom?",
+    essayContext: "You've read On Liberty Ch. 1-2 and Berlin's Two Concepts of Liberty. Engage primarily with Mill."
+  },
+  {
+    n: 6, theme: 'The making of the modern world',
+    intro: 'Smith on the wealth of nations. The economic shaping of everything.',
+    essayQuestion: "Smith argues self-interest produces public good through the invisible hand. When does this argument break down?",
+    essayContext: "You've read Wealth of Nations Bk I Ch. 1-3 and the relevant CORE Econ units."
+  },
+  {
+    n: 7, theme: 'Rhetoric and the art of persuasion',
+    intro: 'How to make others see what you see.',
+    essayQuestion: "Aristotle says rhetoric is the counterpart of dialectic. What does he mean, and is he right?",
+    essayContext: "You've read Aristotle's Rhetoric Bk I and Cialdini's Influence Ch. 1-2."
+  },
+  {
+    n: 8, theme: 'Review and articulation',
+    intro: 'First cycle complete. Consolidate.',
+    essayQuestion: "Of the eight thinkers you've engaged with so far (Russell, Plato, Mill, Aristotle, Hobbes, Thucydides, Periyar, Ambedkar) — which has changed your thinking most, and why?",
+    essayContext: "A reflective essay. Not just appreciation; show what specifically shifted."
+  },
+  {
+    n: 9, theme: 'Microeconomics — how markets work',
+    intro: 'Supply, demand, price, scarcity. The mechanism.',
+    essayQuestion: "Hayek argues prices are a form of knowledge. Is his case strong enough to refute calls for central planning?",
+    essayContext: "You've read Hayek's 1945 essay and the relevant CORE Econ units."
+  },
+  {
+    n: 10, theme: 'Money, markets, and the firm',
+    intro: 'Why do firms exist? Why do prices coordinate strangers?',
+    essayQuestion: "Why do firms exist if markets are so efficient? Engage with Coase's answer and offer your own.",
+    essayContext: "You've read on the theory of the firm + Hayek. Engage with the productive tension between them."
+  },
+  {
+    n: 11, theme: 'Building the modern firm',
+    intro: 'Bezos, Grove, the disruption framework.',
+    essayQuestion: "Christensen says great companies fail because they listen to their best customers. Is the prescription (separate small teams pursuing low-end disruption) sufficient?",
+    essayContext: "You've read The Innovator's Dilemma Ch. 1-4."
+  },
+  {
+    n: 12, theme: 'Synthesis — the cross-track essay',
+    intro: 'End of the first 12 weeks. Write something that bridges traditions.',
+    essayQuestion: "Pick one: (a) Periyar and Mill on liberty. (b) Does Thiruvalluvar's account of kingship survive Machiavelli? (c) What would Aristotle make of Bezos's long-term thinking?",
+    essayContext: "A cross-track essay. 1500-2000 words. This is where original thinking starts."
+  }
+];
+
+/* Backfill the three new tracks (briefing, latin, storytelling) into weeks 1-4,
+   which were written before these tracks existed. */
+WEEKS.forEach(week => {
+  if (week.tasks.some(t => t.track === 'briefing')) return; // already has them
+  const additions = [
+    { track: 'briefing', day: 1, title: 'Morning briefing', desc: 'FT FirstFT or Economist Espresso. 5 min, with coffee. Pick one story you want to be able to discuss tonight.', url: 'https://www.ft.com/firstft', mins: 5, energy: 'low' },
+    { track: 'briefing', day: 2, title: 'Morning briefing', desc: 'Switch sources today — Atlantic, BBC Newscast, or Stratechery (tech-leaning).', mins: 5, energy: 'low' },
+    { track: 'briefing', day: 3, title: 'Morning briefing', desc: 'FirstFT or Marginal Revolution. Notice what gets repeated across sources — that\'s the week\'s actual story.', mins: 5, energy: 'low' },
+    { track: 'briefing', day: 4, title: 'Morning briefing', desc: '5 min. After reading, write one sentence: "The most interesting thing I read today was…"', mins: 5, energy: 'low' },
+    { track: 'briefing', day: 5, title: 'Morning briefing', desc: '5 min. Friday: read tomorrow\'s weekend FT preview or an Economist long-read summary.', mins: 5, energy: 'low' },
+    { track: 'briefing', day: 6, title: 'Long read', desc: 'Saturday: one long-form piece. FT Long Read, Economist 1843, Atlantic feature, or New Yorker. 20-30 min, with coffee.', url: 'https://www.ft.com/long-reads', mins: 25, energy: 'low' },
+    { track: 'briefing', day: 0, title: 'The week ahead', desc: 'Sunday: skim the Economist\'s "The world this week" or FT\'s weekend roundup. Build your one-sentence summary of the week.', mins: 15, energy: 'low' },
+    { track: 'latin', day: 1, title: 'Latin Monday — grammar', desc: 'Continue Wheelock\'s, Lingua Latina, or Cambridge Latin Course. 15 min. Do the exercises out loud.', mins: 15, energy: 'normal' },
+    { track: 'latin', day: 4, title: 'Latin Thursday — translation', desc: 'Translate 4-5 sentences from Caesar\'s Gallic War, Catullus, or Cicero. Use Perseus dictionary as needed. 20 min.', url: 'https://www.perseus.tufts.edu/hopper/', mins: 20, energy: 'normal' },
+    { track: 'storytelling', day: 0, title: 'Storytelling — Sunday listen', desc: 'One Moth episode, one This American Life act, one Sedaris essay, or a chapter from Caitlin Moran/Anthony Bourdain. After, retell the story aloud. Notice the timing.', url: 'https://themoth.org/podcast', mins: 30, energy: 'low' }
+  ];
+  week.tasks = [...week.tasks, ...additions];
+});
+
+/* Tamil daily — university-style. One kural every weekday, Sangam deep-read Saturday,
+   recitation Sunday. Each Tirukkural chapter has 10 couplets; one chapter ≈ 2 weeks.
+
+   The five-layer university method (echoed in every task description):
+     1. Mūlam     — read the Tamil aloud
+     2. Padappirippu — split the words
+     3. Porul     — literal meaning, word by word
+     4. Urai      — read Parimēlaḻakar / Mu Va commentary
+     5. Vilakkam  — your own one-line gloss + memorise
+
+   Sangam rotation for Saturdays: Akanānūṟu → Puṟanāṉūṟu → Kuṟuntokai → Naṟṟiṇai → Aiṅkuṟunūṟu */
+const SANGAM_ROTATION = [
+  { book: 'Akanāṉūṟu', english: 'Akananuru', type: 'akam (love)', desc: 'The "interior" 400. Long poems on love and the five tiṇai landscapes.', url: 'https://sangamtranslationsbyvaidehi.com/akananuru-songs/' },
+  { book: 'Puṟanāṉūṟu', english: 'Purananuru', type: 'puṟam (public)', desc: 'The "exterior" 400. Heroic poems on kings, war, death, the poet at court.', url: 'https://sangamtranslationsbyvaidehi.com/puranaanuru-songs/' },
+  { book: 'Kuṟuntokai', english: 'Kuruntokai', type: 'akam', desc: 'The most beautiful — short akam poems Ramanujan translated in Interior Landscape.', url: 'https://sangamtranslationsbyvaidehi.com/kurunthokai-songs/' },
+  { book: 'Naṟṟiṇai', english: 'Natrinai', type: 'akam', desc: 'The "Good Tiṇai" — 400 medium-length akam poems, intensely psychological.', url: 'https://sangamtranslationsbyvaidehi.com/natrinai-songs/' },
+  { book: 'Aiṅkuṟunūṟu', english: 'Ainkurunuru', type: 'akam, all 5 tiṇai', desc: '500 short poems arranged by the five landscapes. Best place to internalise tiṇai.', url: 'https://sangamtranslationsbyvaidehi.com/ainkurunuru-songs/' }
+];
+
+// Tirukkural Book II — பொருட்பால் (Poruṭpāl, "Wealth/Statecraft/Society"). Chapters 39-108.
+// This is the section on kingship, eloquence, friendship, character, power — most useful for a leader.
+// We do one chapter every two weeks: 5 kurals/week Mon-Fri, finishing the chapter in week 2.
+const TIRUKKURAL_PROGRAM = [
+  { week: 1, chapter: 39, name: 'இறைமாட்சி (Iṟaimāṭci — The Greatness of a King)', kurals: [381,382,383,384,385], url: 'https://thirukkural.io/39/iraimaatchi/' },
+  { week: 2, chapter: 39, name: 'இறைமாட்சி — finishing', kurals: [386,387,388,389,390], url: 'https://thirukkural.io/39/iraimaatchi/' },
+  { week: 3, chapter: 40, name: 'கல்வி (Kalvi — Learning)', kurals: [391,392,393,394,395], url: 'https://thirukkural.io/40/kalvi/' },
+  { week: 4, chapter: 40, name: 'கல்வி — finishing', kurals: [396,397,398,399,400], url: 'https://thirukkural.io/40/kalvi/' },
+  { week: 5, chapter: 43, name: 'அறிவுடைமை (Aṟivuṭaimai — The Possession of Knowledge)', kurals: [421,422,423,424,425], url: 'https://thirukkural.io/43/arivudaimai/' },
+  { week: 6, chapter: 43, name: 'அறிவுடைமை — finishing', kurals: [426,427,428,429,430], url: 'https://thirukkural.io/43/arivudaimai/' },
+  { week: 7, chapter: 65, name: 'சொல்வன்மை (Solvaṉmai — Power in Speech)', kurals: [641,642,643,644,645], url: 'https://thirukkural.io/65/solvanmai/' },
+  { week: 8, chapter: 65, name: 'சொல்வன்மை — finishing', kurals: [646,647,648,649,650], url: 'https://thirukkural.io/65/solvanmai/' },
+  { week: 9, chapter: 72, name: 'அவையறிதல் (Avaiyaṟital — Reading the Room)', kurals: [711,712,713,714,715], url: 'https://thirukkural.io/72/avai-arithal/' },
+  { week: 10, chapter: 72, name: 'அவையறிதல் — finishing', kurals: [716,717,718,719,720], url: 'https://thirukkural.io/72/avai-arithal/' },
+  { week: 11, chapter: 79, name: 'நட்பு (Naṭpu — Friendship)', kurals: [781,782,783,784,785], url: 'https://thirukkural.io/79/natpu/' },
+  { week: 12, chapter: 79, name: 'நட்பு — finishing', kurals: [786,787,788,789,790], url: 'https://thirukkural.io/79/natpu/' }
+];
+
+/* Generate full task lists for weeks 5-12 using the established pattern */
+LATER_WEEKS_TEMPLATE.forEach(weekDef => {
+  WEEKS.push({
+    ...weekDef,
+    tasks: [
+      // PPE tutorial cycle (Mon-Sat) — same structure every week
+      { track: 'ppe', day: 1, title: `Primary text — week ${weekDef.n} reading I`, desc: 'See the canonical text linked on your Tracks tab for this week\'s theme. Read slowly, mark the central claim, supporting reasons, and weakest premise.', mins: 35, energy: 'normal', priority: true },
+      { track: weekDef.n % 2 === 0 ? 'greek' : 'ppe', day: 2, title: `Primary text — week ${weekDef.n} reading II`, desc: 'The secondary reading for this week\'s essay. Take notes on the argument map.', mins: 30, energy: 'high', priority: true },
+      { track: 'ppe', day: 3, title: 'Scaffold your essay', desc: 'Thesis (one sentence). Three arguments (one line each). Strongest counter-argument. Skeleton only.', mins: 20, energy: 'low', priority: true },
+      { track: 'ppe', day: 4, title: 'Draft full essay', desc: '1200-1500 words. Make the case. Don\'t edit as you write.', mins: 60, energy: 'high', priority: true },
+      { track: 'ppe', day: 5, title: 'Polish + read aloud', desc: 'Read aloud. Cut weak sentences. Aim for a 10% shorter, sharper version.', mins: 30, energy: 'normal', priority: true },
+      { track: 'ppe', day: 6, title: '⚔ TUTORIAL — defend your essay', desc: 'Click "Open hostile tutor". 10 exchanges minimum.', mins: 45, energy: 'high', priority: true, isTutorial: true },
+      { track: 'ppe', day: 0, title: 'Sunday review', desc: 'What did you defend well? What did the tutor break? Note the lesson. Plan next week.', mins: 25, energy: 'low' },
+
+      // Becoming — daily mind-rewiring (each day)
+      { track: 'becoming', day: 1, title: `Becoming reading — Day 1 of week ${weekDef.n}`, desc: 'Continue your current Becoming book (Bird by Bird, Big Magic, Daring Greatly, Mindset, Untamed, or whichever you started). 15-20 min.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 2, title: 'Becoming Day 2', desc: 'Continue. The point is daily exposure — your inner voice is being rewired.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 3, title: 'Becoming Day 3', desc: 'Continue. If you finished a book, start the next from the Tracks → Becoming list.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 4, title: 'Fiction — current novel', desc: 'A novel you\'re reading. If none — start one from the Letters track. 25-30 min in bed.', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 5, title: 'Becoming Day 5', desc: 'Continue your current book.', mins: 20, energy: 'low' },
+      { track: 'becoming', day: 6, title: 'Watch / listen — wit and rhythm', desc: 'Fleabag, The Marvelous Mrs. Maisel, a Tina Fey interview, an Olivia Colman speech. Absorption matters as much as reading.', mins: 30, energy: 'low' },
+      { track: 'becoming', day: 0, title: 'Naval at random', desc: '15 min in the Almanack. Highlight one line.', url: 'https://www.navalmanack.com/', mins: 15, energy: 'low' },
+
+      // Code — daily
+      { track: 'code', day: 1, title: `Code — week ${weekDef.n} Day 1`, desc: 'Continue from where you left off in Automate the Boring Stuff or the AI agents course.', mins: 20, energy: 'normal' },
+      { track: 'code', day: 2, title: 'Code Day 2', desc: 'Continue. Type every example.', mins: 20, energy: 'normal' },
+      { track: 'code', day: 3, title: 'Code practice — 3 problems', desc: 'Exercism.io or Codewars. 3 problems at your current level.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 4, title: 'Code Day 4', desc: 'Continue your weekly project or chapter.', mins: 25, energy: 'normal' },
+      { track: 'code', day: 5, title: 'Project work — ship something', desc: 'Spend the longer Friday session on the week\'s code project.', mins: 40, energy: 'high' },
+
+      // Other tracks — one each per week, spread across days
+      // (Tamil is now handled by the daily Tirukkural backfill — see TIRUKKURAL_PROGRAM above)
+      { track: 'history', day: 5, title: `World history — week ${weekDef.n}`, desc: 'Continue your current historical thread (Beard\'s Rome, Davies\'s Europe, Frankopan\'s Silk Roads, Keay\'s India, Spence\'s China, Snyder, Judt, Tooze, Hobsbawm) or BBC In Our Time on a topic you don\'t know.', mins: 35, energy: 'normal' },
+      { track: 'leaders', day: 0, title: `Leaders reading — week ${weekDef.n}`, desc: 'Continue your current biography (Obama, Mandela, Caro, Phil Knight).', mins: 30, energy: 'low' },
+      { track: 'tamilthought', day: 4, title: `Indian thought — week ${weekDef.n}`, desc: 'Continue Periyar, or move to Ambedkar/Gandhi/Bharati per the Tracks list.', mins: 25, energy: 'normal' },
+      { track: 'business', day: 3, title: `Business — week ${weekDef.n}`, desc: 'Continue current book (Grove, Horowitz, Drucker) or move to the next.', mins: 30, energy: 'normal' },
+      { track: 'finance', day: 5, title: `Finance — week ${weekDef.n}`, desc: 'Continue Graham, Marks, Bogle, or Taleb.', mins: 30, energy: 'normal' },
+      { track: 'letters', day: 2, title: `Letters & fiction — week ${weekDef.n}`, desc: 'Continue Didion, Morrison, Ishiguro, or pick from the canon.', mins: 25, energy: 'low' },
+      { track: 'strategy', day: 4, title: `Strategy — week ${weekDef.n}`, desc: 'Continue Sun Tzu, Clausewitz, Porter, or Rumelt.', mins: 30, energy: 'normal' },
+      { track: 'productivity', day: 5, title: `Productivity — week ${weekDef.n}`, desc: 'Continue Covey, Newport, Clear, or Allen. Apply one principle this week.', mins: 25, energy: 'low' },
+      { track: 'science', day: 0, title: `Science — week ${weekDef.n}`, desc: 'Continue Kahneman, Sagan, Munger, or Naval.', mins: 30, energy: 'low' },
+
+      // Daily Briefing — 5 min every morning, the educated reader's habit
+      { track: 'briefing', day: 1, title: 'Morning briefing', desc: 'FT FirstFT or Economist Espresso. 5 min. Pick one story you want to be able to discuss tonight.', url: 'https://www.ft.com/firstft', mins: 5, energy: 'low' },
+      { track: 'briefing', day: 2, title: 'Morning briefing', desc: 'Switch sources today — Atlantic, BBC Newscast, or Stratechery if business-leaning.', mins: 5, energy: 'low' },
+      { track: 'briefing', day: 3, title: 'Morning briefing', desc: 'FirstFT or Marginal Revolution. Notice what gets repeated across sources — that\'s the week\'s actual story.', mins: 5, energy: 'low' },
+      { track: 'briefing', day: 4, title: 'Morning briefing', desc: '5 min. Today, after reading, write one sentence: "The most interesting thing I read today was…"', mins: 5, energy: 'low' },
+      { track: 'briefing', day: 5, title: 'Morning briefing', desc: '5 min. Friday: read tomorrow\'s weekend FT preview or an Economist long-read summary.', mins: 5, energy: 'low' },
+      { track: 'briefing', day: 6, title: 'Long read', desc: 'Saturday: one long-form piece. FT Long Read, Economist 1843, Atlantic feature, or New Yorker. 20-30 min, with coffee.', url: 'https://www.ft.com/long-reads', mins: 25, energy: 'low' },
+      { track: 'briefing', day: 0, title: 'The week ahead', desc: 'Sunday: skim the Economist\'s "The world this week" or FT\'s weekend roundup. Build your one-sentence summary of the week.', mins: 15, energy: 'low' },
+
+      // Latin — 2x/week, 15 min, small but daily-feeling
+      { track: 'latin', day: 1, title: 'Latin Monday — grammar', desc: 'Continue Wheelock\'s, Lingua Latina, or Cambridge Latin Course. 15 min. Do the exercises out loud.', mins: 15, energy: 'normal' },
+      { track: 'latin', day: 4, title: 'Latin Thursday — translation', desc: 'Translate 4-5 sentences from Caesar\'s Gallic War, Catullus, or Cicero. Use Perseus dictionary as needed. 20 min.', url: 'https://www.perseus.tufts.edu/hopper/', mins: 20, energy: 'normal' },
+
+      // Storytelling — 1x/week, weekend listening or reading
+      { track: 'storytelling', day: 0, title: `Storytelling — week ${weekDef.n}`, desc: 'One Moth episode, one This American Life act, one Sedaris essay, or a chapter from Caitlin Moran/Anthony Bourdain. After, retell the story aloud to yourself or a friend. Notice the timing.', url: 'https://themoth.org/podcast', mins: 30, energy: 'low' }
+    ]
+  });
+});
+
+/* TAMIL DAILY — university-style. Operates on ALL 12 weeks (after the template loop).
+   One kural every weekday from a planned chapter; Sangam deep-read Saturday; recitation Sunday. */
+WEEKS.forEach(week => {
+  const program = TIRUKKURAL_PROGRAM.find(p => p.week === week.n);
+  if (!program) return;
+
+  // Remove any pre-existing weekly tamil task — we're going daily
+  week.tasks = week.tasks.filter(t => t.track !== 'tamil');
+
+  // Sangam rotation cycles through the 5 books across the 12 weeks
+  const sangam = SANGAM_ROTATION[(week.n - 1) % SANGAM_ROTATION.length];
+
+  // Mon-Fri: one kural per day
+  const days = [1, 2, 3, 4, 5];
+  days.forEach((d, i) => {
+    const k = program.kurals[i];
+    week.tasks.push({
+      track: 'tamil',
+      day: d,
+      title: `Kural ${k} — ${program.name.split(' (')[0]}`,
+      desc: `On thirukkural.io: (1) read the Tamil mūlam aloud, (2) study the padappirippu (word split), (3) read Mu Va\'s urai for the literal porul, (4) read Parimēlaḻakar\'s urai for the classical reading, (5) write your own one-line gloss. ~10 min. By week\'s end you\'ll have done 5 kurals of this chapter.`,
+      url: program.url,
+      mins: 10,
+      energy: 'low'
+    });
+  });
+
+  // Saturday: Sangam deep-read
+  week.tasks.push({
+    track: 'tamil',
+    day: 6,
+    title: `Sangam Saturday — ${sangam.english} (${sangam.type})`,
+    desc: `Read one poem from ${sangam.book}. ${sangam.desc} On Vaidehi Herbert\'s site, pick any poem — read her literal translation, then the eliya-Tamil urai (simple Tamil meaning). Note: which of the 5 tiṇai (kuṟiñci/mullai/marutam/neytal/pālai) is the landscape? What is the akam situation (lovers united, separated, anxious, etc.) or puṟam situation (king, battle, court, elegy)?`,
+    url: sangam.url,
+    mins: 25,
+    energy: 'normal'
+  });
+
+  // Sunday: recitation
+  week.tasks.push({
+    track: 'tamil',
+    day: 0,
+    title: 'Tamil Sunday — recite + memorise',
+    desc: `Re-read this week\'s 5 kurals aloud — first the Tamil mūlam, then your own gloss. Pick the one that struck you hardest and memorise it fully. Recite the Sangam poem from Saturday once aloud. By week 12, you\'ll have ~12 kurals + 12 Sangam poems by heart — the cadences of Tamil literature inside your speech.`,
+    mins: 15,
+    energy: 'low'
+  });
+});
+
+/* CANON */
+const CANON = [
+  { domain: 'Philosophy', sub: 'Cannot be skipped.', books: [
+    { title: 'Plato — Republic', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1497' },
+    { title: 'Aristotle — Nicomachean Ethics', tag: 'free', url: 'https://www.gutenberg.org/ebooks/8438' },
+    { title: 'Mill — On Liberty / Utilitarianism', tag: 'free', url: 'https://www.gutenberg.org/ebooks/34901' },
+    { title: 'Marcus Aurelius — Meditations', tag: 'free', url: 'https://www.gutenberg.org/ebooks/2680' },
+    { title: 'Hobbes — Leviathan', tag: 'free', url: 'https://www.gutenberg.org/ebooks/3207' }
+  ]},
+  { domain: 'Becoming', sub: 'The mind-rewiring canon. Read like medicine.', books: [
+    { title: 'Anne Lamott — Bird by Bird', tag: 'paid' },
+    { title: 'Elizabeth Gilbert — Big Magic', tag: 'paid' },
+    { title: 'Brené Brown — Daring Greatly', tag: 'paid' },
+    { title: 'Carol Dweck — Mindset', tag: 'paid' },
+    { title: 'Glennon Doyle — Untamed', tag: 'paid' },
+    { title: 'Susan Cain — Quiet', tag: 'paid' },
+    { title: 'Cheryl Strayed — Tiny Beautiful Things', tag: 'paid' },
+    { title: 'Bronnie Ware — Top Five Regrets of the Dying', tag: 'paid' },
+    { title: 'Naval — Almanack (free online)', tag: 'free', url: 'https://www.navalmanack.com/' },
+    { title: 'Mark Manson — The Subtle Art of Not Giving a F*ck', tag: 'paid' },
+    { title: 'Ichiro Kishimi — The Courage to Be Disliked', tag: 'paid' }
+  ]},
+  { domain: 'Tamil', sub: 'The bedrock — daily Kural + Sangam weekly.', books: [
+    { title: 'thirukkural.io — all four major commentaries (free)', tag: 'free', url: 'https://thirukkural.io/' },
+    { title: 'Vaidehi Herbert — all 18 Sangam books in English (free)', tag: 'free', url: 'https://sangamtranslationsbyvaidehi.com/' },
+    { title: 'A.K. Ramanujan — The Interior Landscape (Kuṟuntokai)', tag: 'paid' },
+    { title: 'A.K. Ramanujan — Poems of Love and War', tag: 'paid' },
+    { title: 'Hart & Heifetz — Four Hundred Songs of War & Wisdom', tag: 'paid' },
+    { title: 'Ilango Adigal — Silappatikaram (Parthasarathy)', tag: 'paid' },
+    { title: 'Bharati — Panchali Sapadam', tag: 'paid' }
+  ]},
+  { domain: 'Indian thought', sub: 'The voices of modern India.', books: [
+    { title: 'Periyar — Collected Works (PDF)', tag: 'free', url: 'https://thesatyashodhak.com/wp-content/uploads/2020/05/Collected-Works-Periyar-E-V-Ramasamy-Collected-Works-of-Periyar-E-V-R-The-Periyar-Self-Respect-Propaganda-Institution-9380826435.pdf' },
+    { title: 'Ambedkar — Annihilation of Caste', tag: 'free', url: 'https://ccnmtl.columbia.edu/projects/mmt/ambedkar/web/readings/aoc_print_2004.pdf' },
+    { title: 'Gandhi — Hind Swaraj', tag: 'free', url: 'https://www.mkgandhi.org/ebks/hind_swaraj.pdf' },
+    { title: 'Tagore — Gitanjali', tag: 'free', url: 'https://www.gutenberg.org/ebooks/7164' },
+    { title: 'Nehru — The Discovery of India', tag: 'paid' }
+  ]},
+  { domain: 'World History', sub: 'The educated reader\'s historical literacy.', books: [
+    { title: 'Mary Beard — SPQR (Rome)', tag: 'paid' },
+    { title: 'Tom Holland — Rubicon / Persian Fire / Dominion', tag: 'paid' },
+    { title: 'Norman Davies — Europe: A History', tag: 'paid' },
+    { title: 'Maria Rosa Menocal — The Ornament of the World (al-Andalus)', tag: 'paid' },
+    { title: 'Tony Judt — Postwar', tag: 'paid' },
+    { title: 'Eric Hobsbawm — Age of... series (4 vols)', tag: 'paid' },
+    { title: 'Timothy Snyder — Bloodlands', tag: 'paid' },
+    { title: 'Jonathan Spence — The Search for Modern China', tag: 'paid' },
+    { title: 'Peter Frankopan — The Silk Roads', tag: 'paid' },
+    { title: 'John Keay — India: A History', tag: 'paid' },
+    { title: 'William Dalrymple — The Anarchy', tag: 'paid' },
+    { title: 'Thucydides — Peloponnesian War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/7142' },
+    { title: 'BBC In Our Time (free, ~1000 episodes)', tag: 'free', url: 'https://www.bbc.co.uk/programmes/b006qykl' }
+  ]},
+  { domain: 'Latin', sub: 'The grammar you reach for on inscriptions.', books: [
+    { title: 'Wheelock\'s Latin', tag: 'paid' },
+    { title: 'Lingua Latina per se Illustrata (Ørberg)', tag: 'paid' },
+    { title: 'Cambridge Latin Course (free, online)', tag: 'free', url: 'https://www.cambridgescp.com/about-cambridge-latin-course' },
+    { title: 'D\'Ooge — Latin for Beginners (free)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/18251' },
+    { title: 'Caesar — Gallic War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/10657' },
+    { title: 'Cicero — De Amicitia', tag: 'free', url: 'https://www.gutenberg.org/ebooks/19435' },
+    { title: 'Perseus Digital Library (free Latin + dictionary)', tag: 'free', url: 'https://www.perseus.tufts.edu/hopper/' }
+  ]},
+  { domain: 'Storytelling & Narration', sub: 'How to land the dinner-party story.', books: [
+    { title: 'David Sedaris — Me Talk Pretty One Day', tag: 'paid' },
+    { title: 'David Sedaris — Calypso', tag: 'paid' },
+    { title: 'The Moth (podcast, free)', tag: 'free', url: 'https://themoth.org/podcast' },
+    { title: 'This American Life', tag: 'free', url: 'https://www.thisamericanlife.org/' },
+    { title: 'Nora Ephron — Heartburn', tag: 'paid' },
+    { title: 'Caitlin Moran — More Than a Woman', tag: 'paid' },
+    { title: 'Anthony Bourdain — Kitchen Confidential', tag: 'paid' },
+    { title: 'Robert McKee — Story', tag: 'paid' },
+    { title: 'John Truby — Anatomy of Story', tag: 'paid' }
+  ]},
+  { domain: 'Daily Briefing', sub: 'The educated reader\'s 5-minute morning.', books: [
+    { title: 'FT — FirstFT (free, daily)', tag: 'free', url: 'https://www.ft.com/firstft' },
+    { title: 'The Economist — Espresso', tag: 'free', url: 'https://www.economist.com/the-world-in-brief' },
+    { title: 'The Atlantic — Daily', tag: 'free', url: 'https://www.theatlantic.com/' },
+    { title: 'BBC Newscast (podcast)', tag: 'free', url: 'https://www.bbc.co.uk/programmes/p05299nl' },
+    { title: 'Stratechery (tech analysis)', tag: 'free', url: 'https://stratechery.com/' },
+    { title: 'Marginal Revolution (daily blog)', tag: 'free', url: 'https://marginalrevolution.com/' }
+  ]},
+  { domain: 'Business / Leadership', sub: 'The OGs every CEO has read.', books: [
+    { title: 'Andy Grove — High Output Management', tag: 'paid' },
+    { title: 'Peter Drucker — The Effective Executive', tag: 'paid' },
+    { title: 'Clayton Christensen — The Innovator\'s Dilemma', tag: 'paid' },
+    { title: 'Ben Horowitz — The Hard Thing About Hard Things', tag: 'paid' },
+    { title: 'Geoffrey Moore — Crossing the Chasm', tag: 'paid' },
+    { title: 'Paul Graham — Essays', tag: 'free', url: 'http://paulgraham.com/articles.html' }
+  ]},
+  { domain: 'Finance / Investing', sub: 'Read once. Save yourself.', books: [
+    { title: 'Benjamin Graham — The Intelligent Investor', tag: 'paid' },
+    { title: 'John Bogle — Little Book of Common Sense Investing', tag: 'paid' },
+    { title: 'Howard Marks — The Most Important Thing', tag: 'paid' },
+    { title: 'Nassim Taleb — Incerto (Fooled by Randomness / Black Swan / Antifragile)', tag: 'paid' },
+    { title: 'Morgan Housel — The Psychology of Money', tag: 'paid' },
+    { title: 'Buffett — Berkshire Letters', tag: 'free', url: 'https://www.berkshirehathaway.com/letters/letters.html' }
+  ]},
+  { domain: 'Tech / Code / AI', sub: 'The literacy of power.', books: [
+    { title: 'Brooks — The Mythical Man-Month', tag: 'paid' },
+    { title: 'Paul Graham — Hackers and Painters', tag: 'paid' },
+    { title: 'Automate the Boring Stuff (Python)', tag: 'free', url: 'https://automatetheboringstuff.com/' },
+    { title: 'Anthropic — Building Effective Agents', tag: 'free', url: 'https://www.anthropic.com/engineering/building-effective-agents' },
+    { title: 'Chip Huyen — AI Engineering', tag: 'paid' },
+    { title: 'Karpathy — Neural Networks: Zero to Hero', tag: 'free', url: 'https://karpathy.ai/zero-to-hero.html' }
+  ]},
+  { domain: 'Decisions / Mental models', sub: 'How to think.', books: [
+    { title: 'Kahneman — Thinking, Fast and Slow', tag: 'paid' },
+    { title: 'Munger — Psychology of Human Misjudgement', tag: 'free', url: 'https://fs.blog/great-talks/psychology-human-misjudgement/' },
+    { title: 'Munger — Poor Charlie\'s Almanack', tag: 'paid' },
+    { title: 'Naval — Almanack of Naval Ravikant', tag: 'free', url: 'https://www.navalmanack.com/' },
+    { title: 'Ray Dalio — Principles', tag: 'paid' }
+  ]},
+  { domain: 'Strategy & Negotiation', sub: 'The strategic reading.', books: [
+    { title: 'Sun Tzu — The Art of War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/132' },
+    { title: 'Clausewitz — On War (Book I)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1946' },
+    { title: 'Machiavelli — The Prince', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1232' },
+    { title: 'Michael Porter — Competitive Strategy', tag: 'paid' },
+    { title: 'Richard Rumelt — Good Strategy Bad Strategy', tag: 'paid' },
+    { title: 'Hamilton Helmer — 7 Powers', tag: 'paid' },
+    { title: 'Fisher & Ury — Getting to Yes', tag: 'paid' },
+    { title: 'Cialdini — Influence', tag: 'paid' }
+  ]},
+  { domain: 'Productivity & Habits', sub: 'The OG operating manuals.', books: [
+    { title: 'Stephen Covey — 7 Habits of Highly Effective People', tag: 'paid' },
+    { title: 'David Allen — Getting Things Done', tag: 'paid' },
+    { title: 'Cal Newport — Deep Work', tag: 'paid' },
+    { title: 'James Clear — Atomic Habits', tag: 'paid' },
+    { title: 'Peter Drucker — Managing Oneself (HBR)', tag: 'paid' }
+  ]},
+  { domain: 'Letters, fiction, wit', sub: 'How to be interesting in prose.', books: [
+    { title: 'Joan Didion — Slouching Towards Bethlehem', tag: 'paid' },
+    { title: 'Joan Didion — The White Album', tag: 'paid' },
+    { title: 'Nora Ephron — I Feel Bad About My Neck', tag: 'paid' },
+    { title: 'Toni Morrison — Beloved + Nobel Lecture', tag: 'paid' },
+    { title: 'Marilynne Robinson — Gilead', tag: 'paid' },
+    { title: 'Kazuo Ishiguro — The Remains of the Day', tag: 'paid' },
+    { title: 'Zadie Smith — Feel Free (essays)', tag: 'paid' },
+    { title: 'David Foster Wallace — Consider the Lobster', tag: 'paid' },
+    { title: 'Susan Sontag — Against Interpretation', tag: 'paid' },
+    { title: 'García Márquez — One Hundred Years of Solitude', tag: 'paid' },
+    { title: 'Sally Rooney — Normal People / Conversations with Friends', tag: 'paid' },
+    { title: 'Mary Beard — SPQR', tag: 'paid' }
+  ]},
+  { domain: 'Science & cosmos', sub: 'The educated mind\'s scientific basis.', books: [
+    { title: 'Carl Sagan — Cosmos', tag: 'paid' },
+    { title: 'Richard Feynman — Surely You\'re Joking', tag: 'paid' },
+    { title: 'Feynman — Pleasure of Finding Things Out', tag: 'free', url: 'https://www.youtube.com/watch?v=Bgaw9qe7DEE' },
+    { title: 'Brian Greene — The Elegant Universe', tag: 'paid' },
+    { title: 'Nick Lane — The Vital Question', tag: 'paid' },
+    { title: 'Steven Pinker — How the Mind Works', tag: 'paid' }
+  ]}
+];
+
+const TRACK_BOOKS = {
+  ppe: [
+    { title: 'Russell — Problems of Philosophy', tag: 'free', url: 'https://www.gutenberg.org/ebooks/5827', note: 'Start here' },
+    { title: 'Mill — On Liberty', tag: 'free', url: 'https://www.gutenberg.org/ebooks/34901', note: 'Bible' },
+    { title: 'Mill — Utilitarianism', tag: 'free', url: 'https://www.gutenberg.org/ebooks/11224' },
+    { title: 'Plato — Republic', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1497', note: 'Bible' },
+    { title: 'Hobbes — Leviathan', tag: 'free', url: 'https://www.gutenberg.org/ebooks/3207' },
+    { title: 'Locke — Second Treatise', tag: 'free', url: 'https://www.gutenberg.org/ebooks/7370' },
+    { title: 'CORE Econ — The Economy 2.0', tag: 'free', url: 'https://www.core-econ.org/the-economy/' },
+    { title: 'Stanford Encyclopedia of Philosophy', tag: 'free', url: 'https://plato.stanford.edu/' },
+    { title: 'Wolff — Introduction to Political Philosophy', tag: 'paid' },
+    { title: 'Rawls — A Theory of Justice', tag: 'paid' }
+  ],
+  becoming: [
+    { title: 'Anne Lamott — Bird by Bird', tag: 'paid', note: 'Start here' },
+    { title: 'Elizabeth Gilbert — Big Magic', tag: 'paid', note: 'Bible' },
+    { title: 'Brené Brown — Daring Greatly', tag: 'paid', note: 'Bible' },
+    { title: 'Carol Dweck — Mindset', tag: 'paid', note: 'Bible' },
+    { title: 'Glennon Doyle — Untamed', tag: 'paid' },
+    { title: 'Susan Cain — Quiet', tag: 'paid' },
+    { title: 'Cheryl Strayed — Tiny Beautiful Things', tag: 'paid' },
+    { title: 'Bronnie Ware — Top Five Regrets of the Dying', tag: 'paid' },
+    { title: 'Naval — Almanack (free)', tag: 'free', url: 'https://www.navalmanack.com/' },
+    { title: 'Mark Manson — Subtle Art of Not Giving a F*ck', tag: 'paid' },
+    { title: 'Ichiro Kishimi — The Courage to Be Disliked', tag: 'paid' },
+    { title: 'Sheryl Sandberg — Lean In', tag: 'paid' },
+    { title: 'Caroline Criado Perez — Invisible Women', tag: 'paid' },
+    { title: 'Katty Kay & Claire Shipman — The Confidence Code', tag: 'paid' },
+    { title: 'Tara Mohr — Playing Big', tag: 'paid' },
+    { title: 'Mary Oliver — Devotions (poems)', tag: 'paid' },
+    { title: 'Rebecca Solnit — Men Explain Things to Me', tag: 'paid' },
+    { title: 'Olivia Laing — The Lonely City', tag: 'paid' },
+    { title: 'Sheila Heti — How Should a Person Be?', tag: 'paid' },
+    { title: 'Sally Rooney — Normal People', tag: 'paid' },
+    { title: 'Sally Rooney — Conversations with Friends', tag: 'paid' },
+    { title: 'Phoebe Waller-Bridge — Fleabag scripts', tag: 'paid' },
+    { title: 'Caitlin Moran — How to Be a Woman', tag: 'paid' },
+    { title: 'Tina Fey — Bossypants', tag: 'paid' },
+    { title: 'Amy Poehler — Yes Please', tag: 'paid' },
+    { title: 'Roxane Gay — Bad Feminist', tag: 'paid' },
+    { title: 'Oliver Burkeman — Four Thousand Weeks', tag: 'paid' },
+    { title: 'Pema Chödrön — When Things Fall Apart', tag: 'paid' }
+  ],
+  tamil: [
+    // The single best free Tirukkural resource — all four major commentaries
+    { title: 'thirukkural.io — Mu Va, Parimēlaḻakar, Manakkudavar, Pope (free)', tag: 'free', url: 'https://thirukkural.io/', note: 'Start here — daily' },
+    // The Sangam translator who renders all 18 anthologies with literal meaning + Tamil urai
+    { title: 'Vaidehi Herbert — translations of all 18 Sangam books (free)', tag: 'free', url: 'https://sangamtranslationsbyvaidehi.com/', note: 'Bible — Sangam' },
+    { title: 'Old Tamil Poetry blog — deep poem-by-poem analysis (free)', tag: 'free', url: 'https://oldtamilpoetry.com/', note: 'For comparison' },
+    // Canonical Tamil text repository
+    { title: 'Project Madurai — Tirukkural with Parimēlaḻakar urai (Tamil Unicode, free)', tag: 'free', url: 'https://www.projectmadurai.org/pm_etexts/pdf/pm0450_02.pdf' },
+    { title: 'Project Madurai — Manakkudavar commentary (free)', tag: 'free', url: 'https://www.projectmadurai.org/pm_etexts/pdf/pm0650.pdf' },
+    { title: 'Project Madurai — all 18 Sangam texts in Tamil', tag: 'free', url: 'https://www.projectmadurai.org/', note: 'Tamil source' },
+    { title: 'Dinamalar — Tirukkural with daily commentary (Tamil)', tag: 'free', url: 'https://www.dinamalar.com/thirukkural' },
+    // Scholarly print
+    { title: 'A.K. Ramanujan — The Interior Landscape (Kuṟuntokai)', tag: 'paid', note: 'Bible — akam' },
+    { title: 'A.K. Ramanujan — Poems of Love and War', tag: 'paid', note: 'Bible — both' },
+    { title: 'George L. Hart — The Poems of Ancient Tamil', tag: 'paid', note: 'Scholarly' },
+    { title: 'Hart & Heifetz — The Four Hundred Songs of War and Wisdom (Puṟanāṉūṟu)', tag: 'paid', note: 'Best Puṟanāṉūṟu translation' },
+    { title: 'Pope — The Sacred Kurral of Tiruvalluva-Nayanar (1886)', tag: 'free', url: 'https://archive.org/details/sacredkurralofti00tiruuoft', note: 'Classic English' },
+    { title: 'Ilango Adigal — Silappatikaram (Parthasarathy)', tag: 'paid', note: 'The Tamil epic' },
+    { title: 'Manimekalai — translated by Alain Daniélou', tag: 'paid' },
+    // Modern Tamil literature
+    { title: 'Bharati — Selected Poems', tag: 'paid' },
+    { title: 'Pudhumaipithan — short stories (Holmström translation)', tag: 'paid' },
+    { title: 'Sundara Ramaswamy — J.J.: Some Jottings', tag: 'paid' },
+    { title: 'Perumal Murugan — One Part Woman', tag: 'paid' },
+    { title: 'Salma — The Hour Past Midnight', tag: 'paid' },
+    { title: 'Cho. Dharman — Koogai (The Owl)', tag: 'paid' },
+    { title: 'Imayam — Sellata Panam', tag: 'paid' }
+  ],
+  history: [
+    { title: 'BBC In Our Time — Melvyn Bragg', tag: 'free', url: 'https://www.bbc.co.uk/programmes/b006qykl', note: 'Start here' },
+    // Ancient Mediterranean
+    { title: 'Mary Beard — SPQR', tag: 'paid', note: 'Bible — Rome' },
+    { title: 'Tom Holland — Rubicon', tag: 'paid' },
+    { title: 'Tom Holland — Persian Fire', tag: 'paid' },
+    { title: 'Tom Holland — Dominion', tag: 'paid', note: 'Christianity in West' },
+    { title: 'Thucydides — Peloponnesian War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/7142' },
+    { title: 'Gibbon — Decline and Fall of the Roman Empire', tag: 'free', url: 'https://www.gutenberg.org/ebooks/731' },
+    // Islamic & medieval
+    { title: 'Hugh Kennedy — The Great Arab Conquests', tag: 'paid' },
+    { title: 'Maria Rosa Menocal — The Ornament of the World', tag: 'paid', note: 'Andalusia' },
+    { title: 'Marshall Hodgson — The Venture of Islam (vol I)', tag: 'paid' },
+    // Europe
+    { title: 'Norman Davies — Europe: A History', tag: 'paid', note: 'Bible — Europe' },
+    { title: 'Peter Wilson — The Holy Roman Empire', tag: 'paid' },
+    { title: 'Christopher Clark — The Sleepwalkers (WWI)', tag: 'paid' },
+    { title: 'Eric Hobsbawm — Age of Revolution / Capital / Empire / Extremes', tag: 'paid', note: 'Bible — modern' },
+    // World wars & 20C
+    { title: 'Adam Tooze — The Wages of Destruction', tag: 'paid' },
+    { title: 'Adam Tooze — The Deluge', tag: 'paid' },
+    { title: 'Antony Beevor — Stalingrad', tag: 'paid' },
+    { title: 'Timothy Snyder — Bloodlands', tag: 'paid' },
+    { title: 'Tony Judt — Postwar', tag: 'paid', note: 'Bible — post-1945 Europe' },
+    // East Asia
+    { title: 'Jonathan Spence — The Search for Modern China', tag: 'paid', note: 'Bible — China' },
+    { title: 'Kenneth Pyle — Japan Rising', tag: 'paid' },
+    { title: 'Henry Kissinger — On China', tag: 'paid' },
+    // The global view
+    { title: 'Felipe Fernández-Armesto — Civilizations', tag: 'paid' },
+    { title: 'Peter Frankopan — The Silk Roads', tag: 'paid', note: 'Re-centres history' },
+    { title: 'Yuval Noah Harari — Sapiens', tag: 'paid' },
+    // Indian (still here)
+    { title: 'John Keay — India: A History', tag: 'paid', note: 'Bible — India' },
+    { title: 'Ramachandra Guha — India After Gandhi', tag: 'paid' },
+    { title: 'William Dalrymple — The Anarchy', tag: 'paid' },
+    { title: 'Tony Joseph — Early Indians', tag: 'paid' },
+    { title: 'Romila Thapar — Early India', tag: 'paid' },
+    { title: 'A.L. Basham — The Wonder That Was India', tag: 'paid' },
+    { title: 'Anirudh Kanisetti — Lords of the Deccan', tag: 'paid' },
+    // Free podcasts that count as real education
+    { title: 'The Rest Is History (podcast)', tag: 'free', url: 'https://therestishistory.com/' },
+    { title: 'Hardcore History — Dan Carlin', tag: 'free', url: 'https://www.dancarlin.com/hardcore-history-series/' }
+  ],
+  greek: [
+    { title: 'Plato — Apology / Crito', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1656', note: 'Start here' },
+    { title: 'Plato — Republic', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1497' },
+    { title: 'Aristotle — Nicomachean Ethics', tag: 'free', url: 'https://www.gutenberg.org/ebooks/8438', note: 'Bible' },
+    { title: 'Aristotle — Politics', tag: 'free', url: 'https://www.gutenberg.org/ebooks/6762' },
+    { title: 'Thucydides — Peloponnesian War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/7142', note: 'Bible' },
+    { title: 'Marcus Aurelius — Meditations', tag: 'free', url: 'https://www.gutenberg.org/ebooks/2680' },
+    { title: 'Epictetus — Enchiridion', tag: 'free', url: 'https://www.gutenberg.org/ebooks/45109' },
+    { title: 'Sophocles — Antigone', tag: 'free', url: 'https://www.gutenberg.org/ebooks/31' },
+    { title: 'Emily Wilson — Odyssey / Iliad', tag: 'paid' },
+    { title: 'Perseus Digital Library', tag: 'free', url: 'https://www.perseus.tufts.edu/hopper/' }
+  ],
+  code: [
+    { title: 'Automate the Boring Stuff', tag: 'free', url: 'https://automatetheboringstuff.com/', note: 'Start here' },
+    { title: 'Harvard CS50P', tag: 'free', url: 'https://cs50.harvard.edu/python/' },
+    { title: 'Brooks — Mythical Man-Month', tag: 'paid', note: 'Bible' },
+    { title: 'Paul Graham — Essays', tag: 'free', url: 'http://paulgraham.com/articles.html' },
+    { title: 'Anthropic — Building Effective Agents', tag: 'free', url: 'https://www.anthropic.com/engineering/building-effective-agents' },
+    { title: 'Anthropic — Prompt Engineering Tutorial', tag: 'free', url: 'https://github.com/anthropics/prompt-eng-interactive-tutorial' },
+    { title: 'Hugging Face — AI Agents Course', tag: 'free', url: 'https://huggingface.co/learn/agents-course/unit0/introduction' },
+    { title: 'DeepLearning.AI Short Courses', tag: 'free', url: 'https://www.deeplearning.ai/short-courses/' },
+    { title: 'Karpathy — Neural Networks Zero to Hero', tag: 'free', url: 'https://karpathy.ai/zero-to-hero.html' },
+    { title: 'Chip Huyen — AI Engineering', tag: 'paid' }
+  ],
+  leaders: [
+    { title: 'Obama — A Promised Land', tag: 'paid', note: 'Start here' },
+    { title: 'Mandela — Long Walk to Freedom', tag: 'paid' },
+    { title: 'Caro — The Power Broker', tag: 'paid', note: 'Bible' },
+    { title: 'Caro — Years of Lyndon Johnson', tag: 'paid' },
+    { title: 'Phil Knight — Shoe Dog', tag: 'paid' },
+    { title: 'Isaacson — Steve Jobs', tag: 'paid' },
+    { title: 'Isaacson — Leonardo', tag: 'paid' },
+    { title: 'Kissinger — On China / World Order', tag: 'paid' },
+    { title: 'Doris Kearns Goodwin — Team of Rivals', tag: 'paid' },
+    { title: 'MLK — Letter from Birmingham Jail', tag: 'free', url: 'https://kinginstitute.stanford.edu/king-papers/documents/letter-birmingham-jail' },
+    { title: 'Gandhi — Autobiography', tag: 'free', url: 'https://www.mkgandhi.org/ebks/An-Autobiography.pdf' },
+    { title: 'Michelle Obama — Becoming', tag: 'paid' }
+  ],
+  tamilthought: [
+    { title: 'Periyar — Collected Works', tag: 'free', url: 'https://thesatyashodhak.com/wp-content/uploads/2020/05/Collected-Works-Periyar-E-V-Ramasamy-Collected-Works-of-Periyar-E-V-R-The-Periyar-Self-Respect-Propaganda-Institution-9380826435.pdf', note: 'Start here' },
+    { title: 'Bala Jeyaraman — Periyar: A Political Biography', tag: 'paid' },
+    { title: 'Ambedkar — Annihilation of Caste', tag: 'free', url: 'https://ccnmtl.columbia.edu/projects/mmt/ambedkar/web/readings/aoc_print_2004.pdf', note: 'Bible' },
+    { title: 'Gandhi — Hind Swaraj', tag: 'free', url: 'https://www.mkgandhi.org/ebks/hind_swaraj.pdf' },
+    { title: 'Bharati — Selected', tag: 'paid' },
+    { title: 'Venkatachalapathy — In Those Days There Was No Coffee', tag: 'paid' },
+    { title: 'Rajmohan Gandhi — Modern South India', tag: 'paid' },
+    { title: 'Anna — selected speeches', tag: 'paid' },
+    { title: 'M.S.S. Pandian — Brahmin and Non-Brahmin', tag: 'paid' },
+    { title: 'Tagore — Gitanjali', tag: 'free', url: 'https://www.gutenberg.org/ebooks/7164' },
+    { title: 'Vivekananda — Speeches', tag: 'free', url: 'https://www.gutenberg.org/ebooks/16097' },
+    { title: 'Nehru — Discovery of India', tag: 'paid' }
+  ],
+  business: [
+    { title: 'Andy Grove — High Output Management', tag: 'paid', note: 'Bible' },
+    { title: 'Horowitz — Hard Thing About Hard Things', tag: 'paid', note: 'Bible' },
+    { title: 'Drucker — Effective Executive', tag: 'paid', note: 'Bible' },
+    { title: 'Christensen — Innovator\'s Dilemma', tag: 'paid', note: 'Bible' },
+    { title: 'Moore — Crossing the Chasm', tag: 'paid' },
+    { title: 'Bezos — Invent and Wander', tag: 'paid' },
+    { title: 'Bezos Letters', tag: 'free', url: 'https://www.aboutamazon.com/news/company-news/2021-letter-to-shareholders' },
+    { title: 'Hoffman — Blitzscaling', tag: 'paid' },
+    { title: 'Nadella — Hit Refresh', tag: 'paid' },
+    { title: 'Cialdini — Influence', tag: 'paid' },
+    { title: 'Chris Voss — Never Split the Difference', tag: 'paid' },
+    { title: 'Thiel — Zero to One', tag: 'paid' },
+    { title: 'Ries — Lean Startup', tag: 'paid' },
+    { title: 'Doerr — Measure What Matters', tag: 'paid' },
+    { title: 'Paul Graham — Essays', tag: 'free', url: 'http://paulgraham.com/articles.html' }
+  ],
+  science: [
+    { title: 'Kahneman — Thinking Fast and Slow', tag: 'paid', note: 'Bible' },
+    { title: 'Sagan — Cosmos', tag: 'paid', note: 'Bible' },
+    { title: 'Feynman — Surely You\'re Joking', tag: 'paid' },
+    { title: 'Feynman — Pleasure of Finding Things Out', tag: 'free', url: 'https://www.youtube.com/watch?v=Bgaw9qe7DEE' },
+    { title: 'Munger — Psychology of Misjudgement', tag: 'free', url: 'https://fs.blog/great-talks/psychology-human-misjudgement/' },
+    { title: 'Munger — Poor Charlie\'s Almanack', tag: 'paid' },
+    { title: 'Nick Lane — The Vital Question', tag: 'paid' },
+    { title: 'Brian Greene — Elegant Universe', tag: 'paid' },
+    { title: 'Pinker — How the Mind Works', tag: 'paid' },
+    { title: 'Naval — Almanack', tag: 'free', url: 'https://www.navalmanack.com/' },
+    { title: 'Dalio — Principles', tag: 'paid' }
+  ],
+  finance: [
+    { title: 'Graham — Intelligent Investor', tag: 'paid', note: 'Bible' },
+    { title: 'Bogle — Common Sense Investing', tag: 'paid', note: 'Bible' },
+    { title: 'Marks — The Most Important Thing', tag: 'paid', note: 'Bible' },
+    { title: 'Housel — Psychology of Money', tag: 'paid' },
+    { title: 'Buffett — Berkshire Letters', tag: 'free', url: 'https://www.berkshirehathaway.com/letters/letters.html', note: 'Bible' },
+    { title: 'Taleb — Fooled by Randomness', tag: 'paid' },
+    { title: 'Taleb — The Black Swan', tag: 'paid' },
+    { title: 'Taleb — Antifragile', tag: 'paid' },
+    { title: 'Michael Lewis — Liar\'s Poker / The Big Short', tag: 'paid' },
+    { title: 'Sethi — I Will Teach You to Be Rich', tag: 'paid' }
+  ],
+  letters: [
+    { title: 'Didion — Slouching Towards Bethlehem', tag: 'paid', note: 'Bible' },
+    { title: 'Didion — The White Album', tag: 'paid' },
+    { title: 'Ephron — I Feel Bad About My Neck', tag: 'paid' },
+    { title: 'Morrison — Beloved', tag: 'paid', note: 'Bible' },
+    { title: 'Robinson — Gilead', tag: 'paid' },
+    { title: 'Ishiguro — Remains of the Day', tag: 'paid' },
+    { title: 'García Márquez — 100 Years of Solitude', tag: 'paid', note: 'Bible' },
+    { title: 'Zadie Smith — Feel Free / White Teeth', tag: 'paid' },
+    { title: 'David Foster Wallace — Consider the Lobster', tag: 'paid' },
+    { title: 'Susan Sontag — Against Interpretation', tag: 'paid' },
+    { title: 'Mary Beard — SPQR', tag: 'paid' },
+    { title: 'Adichie — Americanah', tag: 'paid' },
+    { title: 'Min Jin Lee — Pachinko', tag: 'paid' },
+    { title: 'Sally Rooney — Normal People', tag: 'paid' },
+    { title: 'Anne Lamott — Bird by Bird', tag: 'paid' }
+  ],
+  strategy: [
+    { title: 'Sun Tzu — Art of War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/132', note: 'Bible' },
+    { title: 'Clausewitz — On War', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1946', note: 'Bible' },
+    { title: 'Machiavelli — The Prince', tag: 'free', url: 'https://www.gutenberg.org/ebooks/1232', note: 'Bible' },
+    { title: 'Porter — Competitive Strategy', tag: 'paid', note: 'Bible' },
+    { title: 'Rumelt — Good Strategy Bad Strategy', tag: 'paid', note: 'Bible' },
+    { title: 'Helmer — 7 Powers', tag: 'paid' },
+    { title: 'Fisher & Ury — Getting to Yes', tag: 'paid' },
+    { title: 'Voss — Never Split the Difference', tag: 'paid' },
+    { title: 'Cialdini — Influence', tag: 'paid' },
+    { title: 'Greene — 48 Laws of Power', tag: 'paid' },
+    { title: 'Kissinger — Diplomacy', tag: 'paid' },
+    { title: 'Freedman — Strategy: A History', tag: 'paid' }
+  ],
+  productivity: [
+    { title: 'Covey — 7 Habits', tag: 'paid', note: 'Bible' },
+    { title: 'Allen — Getting Things Done', tag: 'paid', note: 'Bible' },
+    { title: 'Newport — Deep Work', tag: 'paid', note: 'Bible' },
+    { title: 'Clear — Atomic Habits', tag: 'paid', note: 'Bible' },
+    { title: 'Drucker — Managing Oneself', tag: 'paid' },
+    { title: 'Newport — Digital Minimalism', tag: 'paid' },
+    { title: 'Newport — So Good They Can\'t Ignore You', tag: 'paid' },
+    { title: 'Ferriss — 4-Hour Workweek', tag: 'paid' },
+    { title: 'Duhigg — Power of Habit', tag: 'paid' },
+    { title: 'McKeown — Essentialism', tag: 'paid' },
+    { title: 'Burkeman — Four Thousand Weeks', tag: 'paid' }
+  ],
+  briefing: [
+    { title: 'FT — FirstFT (free, daily morning)', tag: 'free', url: 'https://www.ft.com/firstft', note: 'Start here' },
+    { title: 'FT — The Briefing (free, UK politics)', tag: 'free', url: 'https://www.ft.com/newsletter-signup/the-briefing' },
+    { title: 'FT — Long Read (weekend)', tag: 'free', url: 'https://www.ft.com/long-reads' },
+    { title: 'The Economist — Espresso (free with signup)', tag: 'free', url: 'https://www.economist.com/the-world-in-brief' },
+    { title: 'The Economist — The Intelligence (daily podcast)', tag: 'free', url: 'https://www.economist.com/audio/podcasts/the-intelligence' },
+    { title: 'The Atlantic — Daily', tag: 'free', url: 'https://www.theatlantic.com/' },
+    { title: 'BBC — The Newscast (podcast)', tag: 'free', url: 'https://www.bbc.co.uk/programmes/p05299nl' },
+    { title: 'Stratechery — Ben Thompson (tech/business analysis)', tag: 'free', url: 'https://stratechery.com/' },
+    { title: 'Marginal Revolution — Tyler Cowen (daily blog)', tag: 'free', url: 'https://marginalrevolution.com/' },
+    { title: 'Astral Codex Ten — Scott Alexander', tag: 'free', url: 'https://www.astralcodexten.com/' },
+    { title: 'Lex Fridman Podcast (long-form interviews)', tag: 'free', url: 'https://lexfridman.com/podcast/' },
+    { title: 'The Knowledge Project — Shane Parrish', tag: 'free', url: 'https://fs.blog/knowledge-project-podcast/' }
+  ],
+  latin: [
+    { title: 'Wheelock\'s Latin (textbook)', tag: 'paid', note: 'Bible — standard' },
+    { title: 'Lingua Latina per se Illustrata (Ørberg)', tag: 'paid', note: 'Bible — immersive method' },
+    { title: 'Cambridge Latin Course (online, free)', tag: 'free', url: 'https://www.cambridgescp.com/about-cambridge-latin-course' },
+    { title: 'Latin for Beginners — Benjamin D\'Ooge (free)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/18251' },
+    { title: 'A New Latin Primer — Charles Bennett (free)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/52001' },
+    { title: 'Duolingo Latin (gamified)', tag: 'free', url: 'https://www.duolingo.com/course/la/en/Learn-Latin' },
+    { title: 'Caesar — Gallic War (Bk I) ', tag: 'free', url: 'https://www.gutenberg.org/ebooks/10657' },
+    { title: 'Cicero — De Amicitia (On Friendship)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/19435' },
+    { title: 'Catullus — Carmina (poems)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/22344' },
+    { title: 'Marcus Aurelius — Meditations (Latin/English)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/2680' },
+    { title: 'Virgil — Aeneid Bk I (Loeb-style)', tag: 'free', url: 'https://www.gutenberg.org/ebooks/228' },
+    { title: 'Perseus Digital Library — Latin texts + dictionary', tag: 'free', url: 'https://www.perseus.tufts.edu/hopper/collection?collection=Perseus:collection:Greco-Roman' },
+    { title: 'Latinitium — Latin podcasts & resources', tag: 'free', url: 'https://www.latinitium.com/' },
+    { title: 'Found in Antiquity — Latin tag explanations', tag: 'free', url: 'https://foundinantiquity.com/' }
+  ],
+  storytelling: [
+    { title: 'David Sedaris — Me Talk Pretty One Day', tag: 'paid', note: 'Start here' },
+    { title: 'David Sedaris — Calypso', tag: 'paid' },
+    { title: 'David Sedaris — Holidays on Ice', tag: 'paid' },
+    { title: 'The Moth (live storytelling) — podcast', tag: 'free', url: 'https://themoth.org/podcast', note: 'Bible — the form' },
+    { title: 'This American Life — podcast', tag: 'free', url: 'https://www.thisamericanlife.org/' },
+    { title: 'Caitlin Moran — More Than a Woman', tag: 'paid' },
+    { title: 'Caitlin Moran — How to Be a Woman', tag: 'paid' },
+    { title: 'Lindy West — Shrill', tag: 'paid' },
+    { title: 'Samantha Irby — Wow, No Thank You', tag: 'paid' },
+    { title: 'Nora Ephron — Heartburn (novel)', tag: 'paid' },
+    { title: 'Anthony Bourdain — Kitchen Confidential', tag: 'paid' },
+    { title: 'Michael Lewis — The Big Short (narrative non-fic)', tag: 'paid' },
+    { title: 'John McPhee — Draft No. 4 (on writing)', tag: 'paid' },
+    { title: 'Robert McKee — Story', tag: 'paid', note: 'The structural bible' },
+    { title: 'John Truby — The Anatomy of Story', tag: 'paid' },
+    { title: 'TED talks — "How to tell a story"', tag: 'free', url: 'https://www.ted.com/playlists/62/how_to_tell_a_story' },
+    { title: 'Phoebe Waller-Bridge — Fleabag (scripts)', tag: 'paid' }
+  ]
+};
+
+const METHODS = [
+  { title: 'The weekly cycle — Oxford style', body: '<strong>Mon-Tue:</strong> Read primary texts slowly. <strong>Wed:</strong> Scaffold the essay (thesis + structure). <strong>Thu:</strong> Draft the full essay. <strong>Fri:</strong> Polish and read aloud. <strong>Sat:</strong> Tutorial — defend your essay against the hostile tutor in Claude for 10 exchanges. <strong>Sun:</strong> Review, steelman the opposing view, plan next week. This rhythm is what produces actual capacity.' },
+  { title: 'The five-minute summary', body: 'After every primary text, close the book and speak its argument aloud for five minutes. Record yourself. Where you stumble is where you do not yet understand.' },
+  { title: 'The steelman', body: 'After each weekly essay, speak for four minutes giving the strongest version of the opposing view. If your steelman sounds weaker than your own argument, you have not yet understood the disagreement.' },
+  { title: 'The hostile tutor', body: 'Saturday is tutorial day. Paste your essay to Claude with the prompt the app generates for you. Defend for at least 10 exchanges. This is the closest substitute for a real Oxford tutorial that exists today — and the single highest-leverage drill in this curriculum.' },
+  { title: 'The 90-second précis', body: 'After each primary text, summarise in 90 seconds aloud. Central claim, main argument, strongest objection, your assessment.' },
+  { title: 'The recitation', body: 'Memorise. Five kurals. The opening of the Iliad. Mill on liberty. Marcus Aurelius. A short Cicero passage in Latin. These become the furniture of your mind — the cadences your speech reaches for under pressure.' },
+  { title: 'The morning briefing — five minutes, with coffee', body: 'Open one source — FT FirstFT, Economist Espresso, the Atlantic Daily. Pick <em>one</em> story that interests you. Skim the rest. The point isn\'t to consume news; it\'s to walk into the day with a fact and an opinion ready. Over months, this is what lets you hold a conversation about anything with anyone.' },
+  { title: 'The retelling drill — for storytellers', body: 'After a Moth episode, a Sedaris essay, or a particularly good FT Long Read: close the source. Retell the story aloud, as if to a friend at dinner. Notice where you stalled, where you over-explained, where the laugh would land. Storytelling is a craft; this is the only way to practise.' },
+  { title: 'Latin daily — fifteen minutes is plenty', body: 'You\'re not learning to read Tacitus fluently. You\'re learning enough to: read an inscription at the British Museum, recognise the spine of every European language, drop <em>sapere aude</em> without wincing. Fifteen minutes, two days a week. The Lingua Latina method (Ørberg) is the gentlest; Wheelock\'s is the canonical.' },
+  { title: 'Reading a Tirukkural the university way', body: 'A Kural is not a fortune-cookie aphorism — it is a kural venba: a tight two-line venba metre, 4 + 3 cīr (metrical feet), every syllable accounted for. To read one properly takes ten minutes and goes through five layers:<br><br><strong>1. Mūlam (மூலம்) — the text.</strong> Read the Tamil aloud, twice. Don\'t skip this even if your Tamil is shaky. The rhythm carries the meaning.<br><br><strong>2. Padappirippu (பதப்பிரிப்பு) — word-splitting.</strong> Tamil agglutinates: words fuse at their edges. The padappirippu separates each underlying word. thirukkural.io shows this beneath the verse.<br><br><strong>3. Porul (பொருள்) — literal meaning.</strong> Mu. Varadarajan (Mu Va) gives the plain modern-Tamil meaning. Read it word by word.<br><br><strong>4. Urai (உரை) — the classical commentary.</strong> Parimēlaḻakar (13th c.) is the canonical commentator; his urai is itself a Tamil classic. Mu Va is plainer. For deep reading, compare both. Pope\'s 1886 English gives a third angle.<br><br><strong>5. Vilakkam (விளக்கம்) — your gloss.</strong> Close the page. Write one sentence in English saying what the Kural means to <em>you</em>. Then memorise the Tamil if it landed.<br><br>By week 12: 60 Kurals (the first 6 chapters), 12 of them memorised. By week 52: ~250 Kurals.' },
+  { title: 'Reading a Sangam poem', body: 'Sangam poetry comes with two technical concepts you must hold in mind. <strong>Akam / Puṟam</strong>: akam (அகம், "interior") = love poetry; puṟam (புறம், "exterior") = public/heroic poetry. Akanāṉūṟu and Kuṟuntokai are akam; Puṟanāṉūṟu is puṟam.<br><br><strong>Tiṇai (திணை, the five landscapes)</strong>: every akam poem is set in one of five land-mood pairings — <em>kuṟiñci</em> (mountain / first union), <em>mullai</em> (forest / patient waiting), <em>marutam</em> (farmland / lovers\' quarrel), <em>neytal</em> (seashore / anxious waiting), <em>pālai</em> (wasteland / separation). The landscape <em>is</em> the emotion. The mountain isn\'t a setting — it\'s what first love feels like. Spotting the tiṇai is the first move of any reading.<br><br>For a poem on Vaidehi Herbert\'s site: (1) read her literal translation, (2) read the eliya-Tamil urai if your Tamil allows, (3) identify the tiṇai and the speaker (the heroine? her friend? the hero? his charioteer?), (4) note the natural images — flowers, birds, animals — and look up what they signal. Sangam poetry is a code; the more you read, the more it reveals.' }
+];
+
+/* ============ STATE ============ */
+const TOTAL_WEEKS = WEEKS.length;
+const STORAGE_KEY = 'curriculum-v4';
+
+let state = {
+  startDate: null,
+  done: {},
+  notes: {},
+  timeSpent: {},
+  energy: 'normal',
+  viewingWeek: null,
+  theme: 'light',
+  currentTask: null,
+  // Pace-adaptive: curriculum advances based on progress, not calendar
+  currentWeek: 1,            // which week the user is currently in
+  weekStartDates: {},        // map { weekN: ISODate } — when each week began
+  weekCompletedDates: {}     // map { weekN: ISODate } — when each week was marked complete
+};
+
+let timerInterval = null;
+let timerRunning = false;
+let timerSeconds = 0;
+let notesSaveTimeout = null;
+let currentTutorEssay = '';
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const saved = JSON.parse(raw);
+      state = { ...state, ...saved };
+    }
+  } catch (e) {}
+  if (!state.startDate) {
+    state.startDate = new Date().toISOString().split('T')[0];
+  }
+  if (!state.currentWeek) state.currentWeek = 1;
+  if (!state.weekStartDates) state.weekStartDates = {};
+  if (!state.weekCompletedDates) state.weekCompletedDates = {};
+  // Record start date for week 1 if not already
+  if (!state.weekStartDates[state.currentWeek]) {
+    state.weekStartDates[state.currentWeek] = new Date().toISOString().split('T')[0];
+  }
+  saveState();
+  document.documentElement.setAttribute('data-theme', state.theme || 'light');
+}
+
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      startDate: state.startDate,
+      done: state.done,
+      notes: state.notes,
+      timeSpent: state.timeSpent,
+      theme: state.theme,
+      currentWeek: state.currentWeek,
+      weekStartDates: state.weekStartDates,
+      weekCompletedDates: state.weekCompletedDates
+    }));
+  } catch (e) {}
+}
+
+function getCurrentWeek() {
+  return state.currentWeek || 1;
+}
+
+// Day-within-the-week (0=Sun review, 1=Mon Read I, ..., 6=Sat Tutorial)
+// Pace-adaptive: advance through phases based on what's been done in the current week
+function getCurrentDayOfWeek() {
+  const wN = getCurrentWeek();
+  // The PPE essay cycle defines the phase. Find the latest phase the user has reached.
+  // Phase order: 1 (Read I) -> 2 (Read II) -> 3 (Scaffold) -> 4 (Draft) -> 5 (Polish) -> 6 (Tutorial) -> 0 (Sunday review)
+  const order = [1, 2, 3, 4, 5, 6, 0];
+  let latestPhaseIdx = 0;
+  for (let i = 0; i < order.length; i++) {
+    if (isDone(wN, 'ppe', order[i])) {
+      latestPhaseIdx = i;
+    } else {
+      // Found the first incomplete phase — that's where we are
+      return order[i];
+    }
+  }
+  // All done — we're in Sunday review
+  return 0;
+}
+
+// Has this week been completed? Tutorial done is the gate.
+function isWeekComplete(wN) {
+  return isDone(wN, 'ppe', 6) || !!state.weekCompletedDates[wN];
+}
+
+// Days since the current week began (real calendar days)
+function daysInCurrentWeek() {
+  const wN = getCurrentWeek();
+  const startDate = state.weekStartDates[wN];
+  if (!startDate) return 0;
+  const start = new Date(startDate);
+  const today = new Date();
+  start.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
+  return Math.floor((today - start) / (24*60*60*1000));
+}
+
+// Manually advance to the next week
+function advanceToNextWeek() {
+  const wN = getCurrentWeek();
+  if (wN >= TOTAL_WEEKS) {
+    showToast("You've reached the final week");
+    return false;
+  }
+  state.weekCompletedDates[wN] = new Date().toISOString().split('T')[0];
+  state.currentWeek = wN + 1;
+  state.weekStartDates[state.currentWeek] = new Date().toISOString().split('T')[0];
+  state.viewingWeek = null;
+  saveState();
+  return true;
+}
+
+// Go back to a previous week (e.g. if user advanced too eagerly)
+function goBackToWeek(wN) {
+  if (wN < 1 || wN > TOTAL_WEEKS) return;
+  state.currentWeek = wN;
+  if (!state.weekStartDates[wN]) {
+    state.weekStartDates[wN] = new Date().toISOString().split('T')[0];
+  }
+  state.viewingWeek = null;
+  saveState();
+}
+
+function getViewingWeek() { return state.viewingWeek || getCurrentWeek(); }
+function toRoman(n) { return ['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'][n] || String(n); }
+function taskKey(w, t, d) { return `w${w}-${t}-d${d || 0}`; }
+function isDone(w, t, d) { return !!state.done[taskKey(w,t,d)]; }
+function hasNotes(w, t, d) { return !!(state.notes[taskKey(w,t,d)] && state.notes[taskKey(w,t,d)].length); }
+function getTime(w, t, d) { return state.timeSpent[taskKey(w,t,d)] || 0; }
+
+// Build a one-tap link for any book — direct URL if known, otherwise Google search
+function bookLink(book) {
+  if (book.url) {
+    return `<a href="${book.url}" target="_blank" rel="noopener">${book.title} ↗</a>`;
+  }
+  // Fallback: Google search the title — works on mobile and respects user's region
+  const q = encodeURIComponent(book.title + ' book');
+  return `<a href="https://www.google.com/search?q=${q}" target="_blank" rel="noopener">${book.title} ↗</a>`;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function filterByEnergy(tasks, energy) {
+  if (energy === 'high') return tasks;
+  if (energy === 'normal') return tasks.filter(t => t.energy !== 'high' || t.priority || ['code', 'becoming', 'briefing', 'tamil'].includes(t.track));
+  return tasks.filter(t => t.energy === 'low' || ['code', 'becoming', 'briefing', 'tamil'].includes(t.track));
+}
+
+function chev() {
+  return '<svg class="task-chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>';
+}
+
+function taskHTML(weekN, t) {
+  const done = isDone(weekN, t.track, t.day);
+  const notes = hasNotes(weekN, t.track, t.day);
+  const mins = getTime(weekN, t.track, t.day);
+  const progress = !done && (notes || mins > 0) ? `<span class="task-progress">in progress</span>` : '';
+  const tutorialTag = t.isTutorial ? `<span class="task-tutorial-tag">⚔ Tutorial</span>` : '';
+  const trackName = TRACKS[t.track] ? TRACKS[t.track].name : t.track;
+  return `
+    <div class="task ${done ? 'done' : ''} ${t.priority ? 'priority' : ''}" data-week="${weekN}" data-track="${t.track}" data-day="${t.day}">
+      <div class="task-check" onclick="event.stopPropagation(); toggleDone(${weekN}, '${t.track}', ${t.day})"></div>
+      <div class="task-body">
+        <div class="task-head">
+          <span class="task-track" data-t="${t.track}">${trackName}</span>
+          <span class="task-duration">${t.mins} min</span>
+          ${tutorialTag}
+          ${progress}
+        </div>
+        <div class="task-title">${t.title}</div>
+        <div class="task-desc">${t.desc}</div>
+      </div>
+      ${chev()}
+    </div>
+  `;
+}
+
+function renderDate() {
+  const t = new Date();
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('dateChip').textContent = `${days[t.getDay()]} ${t.getDate()} ${months[t.getMonth()]}`;
+}
+
+function renderPhaseTracker() {
+  const currentPhase = getCurrentDayOfWeek();
+  const weekN = getCurrentWeek();
+  const order = [1, 2, 3, 4, 5, 6, 0]; // Mon→Sun in phase order
+  const dayNames = ['Read I', 'Read II', 'Scaffold', 'Draft', 'Polish', 'Tutorial', 'Review'];
+  document.getElementById('phaseTracker').innerHTML = order.map((dayIdx, i) => {
+    const phase = PHASES[dayIdx];
+    const isCurrent = dayIdx === currentPhase;
+    const isDoneThis = isDone(weekN, 'ppe', dayIdx);
+    return `
+      <div class="phase-day ${isCurrent ? 'today' : ''} ${isDoneThis ? 'done' : ''}">
+        <div class="phase-day-name">${dayNames[i]}</div>
+        <div class="phase-day-phase">${phase.name}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderPhaseBanner() {
+  const phaseDay = getCurrentDayOfWeek();
+  const phase = PHASES[phaseDay];
+  const weekN = getCurrentWeek();
+  const week = WEEKS[weekN - 1];
+  const weekDone = isWeekComplete(weekN);
+  const daysIn = daysInCurrentWeek();
+
+  document.getElementById('phaseBannerLabel').textContent =
+    weekDone ? `Week ${weekN} complete · day ${daysIn} since you started this week`
+             : `Your next mode: ${phase.name.toUpperCase()} · day ${daysIn} since you started this week`;
+  document.getElementById('phaseBannerTitle').textContent = weekDone ? 'Ready for the next week' : phase.desc;
+
+  let sub = '';
+  let btn = document.getElementById('phaseBannerBtn');
+  btn.style.display = 'none';
+
+  if (weekDone && weekN < TOTAL_WEEKS) {
+    sub = "You've defended the tutorial. Advance when ready — next week is waiting.";
+    btn.style.display = 'inline-flex';
+    btn.textContent = `Begin week ${weekN + 1} →`;
+    btn.onclick = () => {
+      if (advanceToNextWeek()) {
+        showToast(`Week ${weekN + 1} begins now`);
+        renderAll();
+      }
+    };
+  } else if (weekDone) {
+    sub = "You've finished the final week. Consider doing a cross-track essay, or restart with a new start date in Settings.";
+  } else if (phaseDay === 6) {
+    sub = "Your essay is ready (we hope). Open the hostile tutor and defend for 10 exchanges. This is the gate — completing this advances you to the next week.";
+    btn.style.display = 'inline-flex';
+    btn.textContent = 'Open hostile tutor →';
+    btn.onclick = () => openHostileTutorForWeek(weekN);
+  } else if (phaseDay >= 3 && phaseDay <= 5) {
+    sub = `This week's question: "${week ? week.essayQuestion : ''}"`;
+  } else if (phaseDay === 1 || phaseDay === 2) {
+    sub = `Read with the week's essay question in mind: "${week ? week.essayQuestion : ''}"`;
+  } else {
+    sub = 'Review what you learned. Plan next week. Steelman the view you disagreed with.';
+  }
+  document.getElementById('phaseBannerSub').textContent = sub;
+}
+
+function renderToday() {
+  const wN = getCurrentWeek();
+  const week = WEEKS[wN - 1];
+  if (!week) return;
+
+  const currentPhase = getCurrentDayOfWeek();
+  const daysIn = daysInCurrentWeek();
+
+  document.getElementById('weekTag').textContent = `Week ${wN} of ${TOTAL_WEEKS} · ${toRoman(wN)} · day ${daysIn} in`;
+  document.getElementById('heroTitle').innerHTML = week.theme.replace(/—/, '<em>—</em>');
+  document.getElementById('heroSub').textContent = week.intro;
+
+  renderPhaseBanner();
+  renderPhaseTracker();
+
+  document.querySelectorAll('.energy-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.energy === state.energy);
+  });
+
+  // Pace-adaptive: surface the current phase's task plus daily tracks (becoming, code)
+  // plus any unfinished earlier-phase PPE tasks the user hasn't done yet.
+  const phaseOrder = [1, 2, 3, 4, 5, 6, 0];
+  const currentPhaseIdx = phaseOrder.indexOf(currentPhase);
+  const phasesToShow = phaseOrder.slice(0, currentPhaseIdx + 1); // earlier phases + current
+
+  const visibleTasks = week.tasks.filter(t => {
+    // Always show daily tracks (becoming, code) — they're not phase-gated
+    if (t.track === 'becoming' || t.track === 'code' || t.track === 'briefing' || t.track === 'tamil') {
+      return !isDone(wN, t.track, t.day);
+    }
+    // Show tasks whose day-phase is <= current phase, but not yet done
+    if (phasesToShow.includes(t.day)) {
+      return !isDone(wN, t.track, t.day);
+    }
+    return false;
+  });
+
+  const filtered = filterByEnergy(visibleTasks, state.energy);
+  const allWeekTasks = week.tasks;
+  const allDone = allWeekTasks.filter(t => isDone(wN, t.track, t.day)).length;
+  const totalMins = filtered.reduce((s,t) => s + t.mins, 0);
+  document.getElementById('taskMeta').textContent = `${filtered.length} ready · ${totalMins} min · phase ${currentPhase === 0 ? 7 : currentPhase} of 7`;
+
+  document.getElementById('todayTasks').innerHTML = filtered.length
+    ? filtered.map(t => taskHTML(wN, t)).join('')
+    : `<div class="empty"><div class="empty-title">Everything in this phase is done</div><p>Mark the tutorial complete (Saturday) to advance to the next week, or jump ahead via the Week tab.</p></div>`;
+
+  const totalDone = Object.keys(state.done).length;
+  const totalMinsSpent = Object.values(state.timeSpent).reduce((s,m) => s+m, 0);
+
+  document.getElementById('todayStats').innerHTML = `
+    <div class="stat"><div class="stat-label">This week</div><div class="stat-value">${allDone}<span style="font-size: 18px; color: var(--text-mute);">/${allWeekTasks.length}</span></div><div class="stat-sub">tasks</div></div>
+    <div class="stat"><div class="stat-label">Total done</div><div class="stat-value">${totalDone}</div><div class="stat-sub">across all weeks</div></div>
+    <div class="stat"><div class="stat-label">Minutes</div><div class="stat-value">${totalMinsSpent}</div><div class="stat-sub">tracked</div></div>
+    <div class="stat"><div class="stat-label">Week progress</div><div class="stat-value">${Math.round(allDone/allWeekTasks.length*100)}<span style="font-size: 18px; color: var(--text-mute);">%</span></div></div>
+  `;
+
+  document.querySelectorAll('#todayTasks .task').forEach(el => {
+    el.addEventListener('click', () => openWorkspace(+el.dataset.week, el.dataset.track, +el.dataset.day));
+  });
+}
+
+function renderWeekView() {
+  const wN = getViewingWeek();
+  const week = WEEKS[wN - 1];
+  if (!week) return;
+
+  document.getElementById('weekNavNum').textContent = `Week ${wN} of ${TOTAL_WEEKS}`;
+  document.getElementById('weekNavName').textContent = week.theme;
+  document.getElementById('prevWeek').disabled = wN <= 1;
+  document.getElementById('nextWeek').disabled = wN >= TOTAL_WEEKS;
+
+  const tasks = week.tasks;
+  const done = tasks.filter(t => isDone(wN, t.track, t.day)).length;
+  const inProgress = tasks.filter(t => !isDone(wN, t.track, t.day) && hasNotes(wN, t.track, t.day)).length;
+  const total = tasks.reduce((s,t) => s + t.mins, 0);
+  const spent = tasks.reduce((s,t) => s + getTime(wN, t.track, t.day), 0);
+
+  document.getElementById('weekStats').innerHTML = `
+    <div class="stat"><div class="stat-label">Complete</div><div class="stat-value">${done}<span style="font-size: 18px; color: var(--text-mute);">/${tasks.length}</span></div></div>
+    <div class="stat"><div class="stat-label">In progress</div><div class="stat-value">${inProgress}</div></div>
+    <div class="stat"><div class="stat-label">Time</div><div class="stat-value">${spent}<span style="font-size: 18px; color: var(--text-mute);">/${total}m</span></div></div>
+    <div class="stat"><div class="stat-label">Progress</div><div class="stat-value">${Math.round(done/tasks.length*100)}<span style="font-size: 18px; color: var(--text-mute);">%</span></div></div>
+  `;
+
+  document.getElementById('weekTaskMeta').textContent = `${tasks.length} tasks · ${total} min total · essay: "${week.essayQuestion}"`;
+
+  // Pace-adaptive controls bar: insert above the task list
+  const currentW = getCurrentWeek();
+  const weekDone = isWeekComplete(wN);
+  const isCurrent = wN === currentW;
+  const ppeTutorialDone = isDone(wN, 'ppe', 6);
+  let controlsHTML = '<div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 8px;">';
+  if (isCurrent && !weekDone) {
+    controlsHTML += `<button class="btn btn-primary" onclick="manualAdvance()">Mark week complete & advance →</button>`;
+    controlsHTML += `<span style="font-size: 12px; color: var(--text-mute); align-self: center;">${ppeTutorialDone ? 'Tutorial done. Ready to advance.' : 'Normally you advance by completing the Saturday tutorial. You can override here.'}</span>`;
+  } else if (isCurrent && weekDone) {
+    controlsHTML += `<button class="btn btn-primary" onclick="manualAdvance()">Begin week ${wN + 1} →</button>`;
+  } else if (wN < currentW) {
+    controlsHTML += `<span class="task-progress" style="align-self: center;">Past week · completed</span>`;
+    controlsHTML += `<button class="btn" onclick="goBackToWeek(${wN}); renderAll();">Re-enter this week</button>`;
+  } else if (wN > currentW) {
+    controlsHTML += `<span style="font-size: 12px; color: var(--text-mute); align-self: center;">Future week · you're currently on week ${currentW}</span>`;
+    controlsHTML += `<button class="btn" onclick="jumpToWeek(${wN})">Jump ahead to this week</button>`;
+  }
+  controlsHTML += '</div>';
+
+  // Group tasks by day
+  const dayOrder = [1, 2, 3, 4, 5, 6, 0];
+  const dayNames = ['Sunday — Review', 'Monday — Read I', 'Tuesday — Read II', 'Wednesday — Scaffold', 'Thursday — Draft', 'Friday — Polish', 'Saturday — ⚔ Tutorial'];
+  let html = '';
+  for (const d of dayOrder) {
+    const dayTasks = tasks.filter(t => t.day === d);
+    if (dayTasks.length === 0) continue;
+    html += `<h3 style="font-family: 'Instrument Serif', serif; font-size: 18px; font-style: italic; margin: 20px 0 8px; color: var(--text-soft);">${dayNames[d]}</h3>`;
+    html += dayTasks.map(t => taskHTML(wN, t)).join('');
+  }
+  document.getElementById('weekTasks').innerHTML = controlsHTML + html;
+
+  document.querySelectorAll('#weekTasks .task').forEach(el => {
+    el.addEventListener('click', () => openWorkspace(+el.dataset.week, el.dataset.track, +el.dataset.day));
+  });
+}
+
+function renderTracks() {
+  const grid = document.getElementById('trackGrid');
+  const counts = {};
+  Object.keys(TRACKS).forEach(t => counts[t] = 0);
+  Object.keys(state.done).forEach(k => {
+    const m = k.match(/^w(\d+)-([^-]+)-/);
+    if (m) counts[m[2]] = (counts[m[2]] || 0) + 1;
+  });
+
+  const possible = {};
+  Object.keys(TRACKS).forEach(t => possible[t] = 0);
+  WEEKS.forEach(w => w.tasks.forEach(t => { if (possible[t.track] !== undefined) possible[t.track]++; }));
+
+  grid.innerHTML = Object.entries(TRACKS).map(([id, t]) => {
+    const p = possible[id] || 0;
+    const c = counts[id] || 0;
+    const pct = p ? Math.round(c / p * 100) : 0;
+    return `
+      <div class="track-card" data-t="${id}" onclick="showTrackDetail('${id}')">
+        <div class="track-card-head">${t.full}</div>
+        <div class="track-card-title">${t.sub}</div>
+        <div class="track-card-sub">${(TRACK_BOOKS[id] || []).length} books · ${t.freq}</div>
+        <div class="track-card-stats">
+          <div class="track-card-progress">
+            <span>${c}/${p}</span>
+            <div class="track-card-bar"><div class="track-card-bar-fill" style="width: ${pct}%;"></div></div>
+          </div>
+          <span>${pct}%</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  document.getElementById('trackDetail').innerHTML = '';
+}
+
+function showTrackDetail(id) {
+  const t = TRACKS[id];
+  const books = TRACK_BOOKS[id] || [];
+  document.getElementById('trackDetail').innerHTML = `
+    <div class="track-card" style="cursor: default; padding: 28px 32px; margin-top: 8px;" data-t="${id}">
+      <div class="track-card-head">${t.freq}</div>
+      <div class="track-card-title" style="font-size: 28px; margin-bottom: 4px;">${t.full}</div>
+      <div class="track-card-sub" style="margin-bottom: 18px;">${t.sub}</div>
+      <ul class="book-list">
+        ${books.map(b => {
+          const tag = b.tag === 'free' ? `<span class="tag tag-free">Free</span>` : `<span class="tag tag-paid">Book</span>`;
+          let noteTag = '';
+          if (b.note === 'Bible') noteTag = `<span class="tag tag-bible">Bible</span>`;
+          else if (b.note) noteTag = `<span class="tag tag-priority">${b.note}</span>`;
+          return `<li><div class="book-title-row">${bookLink(b)}${noteTag}</div>${tag}</li>`;
+        }).join('')}
+      </ul>
+    </div>
+  `;
+  document.getElementById('trackDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderCanon() {
+  document.getElementById('canonList').innerHTML = CANON.map(c => `
+    <div class="settings-card">
+      <h3 style="font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 4px;">${c.domain}</h3>
+      <p class="desc">${c.sub}</p>
+      <ul class="book-list">
+        ${c.books.map(b => {
+          const tag = b.tag === 'free' ? `<span class="tag tag-free">Free</span>` : `<span class="tag tag-paid">Book</span>`;
+          return `<li><div class="book-title-row">${bookLink(b)}</div>${tag}</li>`;
+        }).join('')}
+      </ul>
+    </div>
+  `).join('');
+}
+
+function renderMethod() {
+  document.getElementById('methodList').innerHTML = METHODS.map((m, i) => `
+    <div class="method-card">
+      <div class="method-card-num">${i+1}.</div>
+      <h3>${m.title}</h3>
+      <p>${m.body}</p>
+    </div>
+  `).join('') + `
+    <div class="method-card" style="border-color: var(--c-ppe); background: rgba(194, 65, 12, 0.03);">
+      <h3 style="color: var(--c-ppe);">Cross-track essays</h3>
+      <p>Once a month, write an essay that bridges two tracks. This is where original thinking starts.</p>
+      <ul style="margin-top: 10px; margin-left: 18px; color: var(--text-soft); font-size: 13.5px;">
+        <li>Periyar and Mill: two arguments for liberty.</li>
+        <li>Does Thiruvalluvar's kingship survive Machiavelli?</li>
+        <li>What would Aristotle have made of LLM agents?</li>
+        <li>Bezos's letters and Marcus Aurelius: two genres of leadership reflection.</li>
+      </ul>
+    </div>
+  `;
+}
+
+function renderSettings() {
+  const wN = getCurrentWeek();
+  const daysIn = daysInCurrentWeek();
+  const week = WEEKS[wN - 1];
+  document.getElementById('currentStartDisplay').innerHTML =
+    `Started ${state.startDate} · currently on <strong>week ${wN}</strong> (${week ? week.theme : ''}), day ${daysIn} in this week`;
+  document.getElementById('startDateInput').value = state.startDate;
+}
+
+function renderAll() {
+  renderToday();
+  renderWeekView();
+  renderTracks();
+  renderCanon();
+  renderMethod();
+  renderSettings();
+}
+
+/* ============ WORKSPACE ============ */
+function openWorkspace(weekN, track, day) {
+  state.currentTask = { weekN, track, day };
+  const week = WEEKS[weekN - 1];
+  const task = week.tasks.find(t => t.track === track && t.day === day);
+  if (!task) return;
+
+  document.getElementById('wsTrack').textContent = TRACKS[track].name;
+  document.getElementById('wsTrack').setAttribute('data-t', track);
+  document.getElementById('wsDuration').textContent = `${task.mins} min suggested`;
+  document.getElementById('wsTitle').textContent = task.title;
+
+  const tutorialBadge = document.getElementById('wsTutorialBadge');
+  tutorialBadge.style.display = task.isTutorial ? 'inline-block' : 'none';
+
+  // For draft/polish/tutorial tasks, change the pane labels
+  const leftLabel = document.getElementById('wsLeftLabel');
+  const rightLabel = document.getElementById('wsRightLabel');
+  const notesArea = document.getElementById('wsNotes');
+  if (day === 3) { // scaffold day
+    leftLabel.textContent = 'The brief';
+    rightLabel.textContent = 'Your essay scaffold';
+    notesArea.placeholder = 'Scaffold:\n\nThesis (one sentence):\n\nArgument 1:\nArgument 2:\nArgument 3:\n\nStrongest counter-argument:\nMy response:';
+  } else if (day === 4 || day === 5) { // draft/polish
+    leftLabel.textContent = 'The brief';
+    rightLabel.textContent = 'Your essay draft';
+    notesArea.placeholder = 'Write your essay here. Autosaved.\n\nAim for 1200-1500 words. Take a position. Defend it. Address the strongest counter-argument.';
+  } else if (task.isTutorial) {
+    leftLabel.textContent = 'Tutorial brief';
+    rightLabel.textContent = 'Tutorial notes';
+    notesArea.placeholder = 'After defending against the hostile tutor, note here:\n\n• What did you defend well?\n• Where did the tutor break you?\n• What is the lesson for next week?';
+  } else {
+    leftLabel.textContent = 'The reading';
+    rightLabel.textContent = 'Your notes';
+    notesArea.placeholder = 'Annotate as you read. Your notes save automatically.';
+  }
+
+  const promptsHTML = task.prompts ? `
+    <div class="ws-prompts">
+      <h4>Annotation prompts</h4>
+      <ul>${task.prompts.map(p => `<li>${p}</li>`).join('')}</ul>
+    </div>
+  ` : '';
+
+  // Show essay brief for writing days
+  let essayBrief = '';
+  if ([3, 4, 5].includes(day) && task.track === 'ppe') {
+    essayBrief = `
+      <div class="ws-prompts" style="background: rgba(194, 65, 12, 0.05); border-left: 3px solid var(--c-ppe);">
+        <h4 style="color: var(--c-ppe);">This week's essay question</h4>
+        <p style="margin-bottom: 8px; font-weight: 500; color: var(--text); font-size: 14px;">${week.essayQuestion}</p>
+        <p style="font-size: 12.5px;">${week.essayContext}</p>
+      </div>
+    `;
+  }
+
+  const openBtn = task.url
+    ? `<a href="${task.url}" target="_blank" class="ws-open-btn">Open the reading <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>`
+    : '';
+
+  const tutorBtn = task.isTutorial
+    ? `<button class="ws-tutor-btn" onclick="openHostileTutorForWeek(${weekN})">⚔ Open hostile tutor →</button>`
+    : '';
+
+  document.getElementById('wsLeft').innerHTML = `<div class="ws-desc">${task.desc}</div>${openBtn}${tutorBtn}${essayBrief}${promptsHTML}`;
+
+  // Tutorial button in footer
+  const footerTutorBtn = document.getElementById('wsTutorBtn');
+  if (task.isTutorial) {
+    footerTutorBtn.style.display = 'inline-flex';
+    footerTutorBtn.onclick = () => openHostileTutorForWeek(weekN);
+  } else {
+    footerTutorBtn.style.display = 'none';
+  }
+
+  const key = taskKey(weekN, track, day);
+  notesArea.value = state.notes[key] || '';
+  updateWordCount();
+
+  timerSeconds = (state.timeSpent[key] || 0) * 60;
+  timerRunning = false;
+  updateTimerDisplay();
+  document.getElementById('wsTimerToggle').textContent = 'Start timer';
+  document.getElementById('wsTimer').classList.remove('running');
+
+  const done = isDone(weekN, track, day);
+  const btn = document.getElementById('wsMarkDone');
+  btn.textContent = done ? 'Reopen' : 'Mark complete';
+  btn.classList.toggle('btn-success', !done);
+  btn.classList.toggle('btn-ghost', done);
+
+  document.getElementById('workspaceOverlay').classList.add('active');
+  setTimeout(() => notesArea.focus(), 100);
+}
+
+function closeWorkspace() {
+  if (timerRunning) toggleTimer();
+  document.getElementById('workspaceOverlay').classList.remove('active');
+  state.currentTask = null;
+  renderAll();
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timerSeconds / 60);
+  const s = timerSeconds % 60;
+  document.getElementById('wsTimer').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  document.getElementById('wsTime').textContent = m;
+}
+
+function toggleTimer() {
+  if (timerRunning) {
+    clearInterval(timerInterval);
+    timerRunning = false;
+    document.getElementById('wsTimerToggle').textContent = 'Resume';
+    document.getElementById('wsTimer').classList.remove('running');
+    if (state.currentTask) {
+      const key = taskKey(state.currentTask.weekN, state.currentTask.track, state.currentTask.day);
+      state.timeSpent[key] = Math.floor(timerSeconds / 60);
+      saveState();
+    }
+  } else {
+    timerRunning = true;
+    document.getElementById('wsTimerToggle').textContent = 'Pause';
+    document.getElementById('wsTimer').classList.add('running');
+    timerInterval = setInterval(() => {
+      timerSeconds++;
+      updateTimerDisplay();
+      if (timerSeconds % 60 === 0 && state.currentTask) {
+        const key = taskKey(state.currentTask.weekN, state.currentTask.track, state.currentTask.day);
+        state.timeSpent[key] = Math.floor(timerSeconds / 60);
+        saveState();
+      }
+    }, 1000);
+  }
+}
+
+function updateWordCount() {
+  const txt = document.getElementById('wsNotes').value.trim();
+  const words = txt ? txt.split(/\s+/).length : 0;
+  document.getElementById('wsWords').textContent = words;
+}
+
+function saveNotes() {
+  if (!state.currentTask) return;
+  const key = taskKey(state.currentTask.weekN, state.currentTask.track, state.currentTask.day);
+  const val = document.getElementById('wsNotes').value;
+  if (val) state.notes[key] = val;
+  else delete state.notes[key];
+  saveState();
+}
+
+function toggleDone(weekN, track, day) {
+  const key = taskKey(weekN, track, day);
+  const wasDone = !!state.done[key];
+  if (wasDone) delete state.done[key];
+  else state.done[key] = true;
+  saveState();
+  renderAll();
+
+  // Celebrate tutorial completion (Saturday, PPE) and offer to advance
+  if (!wasDone && track === 'ppe' && day === 6 && weekN === getCurrentWeek() && weekN < TOTAL_WEEKS) {
+    showToast('⚔ Tutorial complete — week ' + weekN + ' is done');
+    setTimeout(() => {
+      if (confirm(`You've completed the tutorial for week ${weekN}. Begin week ${weekN + 1} now?\n\n(You can also start it later from the Week tab — your progress will be waiting.)`)) {
+        if (advanceToNextWeek()) {
+          renderAll();
+          showToast(`Week ${state.currentWeek} begins`);
+        }
+      }
+    }, 400);
+  } else {
+    showToast(state.done[key] ? '✓ Marked complete' : 'Reopened');
+  }
+}
+
+function markCurrentDone() {
+  if (!state.currentTask) return;
+  const { weekN, track, day } = state.currentTask;
+  const key = taskKey(weekN, track, day);
+  const wasDone = !!state.done[key];
+  if (timerRunning) {
+    state.timeSpent[key] = Math.floor(timerSeconds / 60);
+    clearInterval(timerInterval);
+    timerRunning = false;
+  }
+  saveNotes();
+  if (wasDone) delete state.done[key];
+  else state.done[key] = true;
+  saveState();
+  closeWorkspace();
+
+  // Tutorial-day celebration
+  if (!wasDone && track === 'ppe' && day === 6 && weekN === getCurrentWeek() && weekN < TOTAL_WEEKS) {
+    showToast('⚔ Tutorial complete — week ' + weekN + ' is done');
+    setTimeout(() => {
+      if (confirm(`You've completed the tutorial for week ${weekN}. Begin week ${weekN + 1} now?\n\n(You can also start it later from the Week tab.)`)) {
+        if (advanceToNextWeek()) {
+          renderAll();
+          showToast(`Week ${state.currentWeek} begins`);
+        }
+      }
+    }, 400);
+  } else {
+    showToast(state.done[key] ? '✓ Complete' : 'Reopened');
+  }
+}
+
+/* ============ HOSTILE TUTOR ============ */
+function openHostileTutorForWeek(weekN) {
+  const week = WEEKS[weekN - 1];
+  if (!week) return;
+
+  // Find the essay draft notes — check the polish day first, then draft day
+  const polishKey = taskKey(weekN, 'ppe', 5);
+  const draftKey = taskKey(weekN, 'ppe', 4);
+  const scaffoldKey = taskKey(weekN, 'ppe', 3);
+  let essay = state.notes[polishKey] || state.notes[draftKey] || state.notes[scaffoldKey] || '';
+
+  let promptText = '';
+  if (essay.trim()) {
+    promptText = `You are an Oxford PPE tutor. I have written an essay on this question:
+
+"${week.essayQuestion}"
+
+CONTEXT: ${week.essayContext}
+
+MY ESSAY:
+${essay}
+
+Your job: be a hostile tutor. Find the weakest point in this essay and press me on it for ten exchanges. Don't let me off easily. After each of my responses:
+- Acknowledge what I got right (briefly).
+- Identify the next weakness.
+- Push harder.
+
+If I retreat to vagueness, name it. If I shift the goalposts, point it out. If I appeal to authority, demand I argue the point myself.
+
+End the tenth exchange with one sentence on what I should rewrite before my next essay.
+
+Start now.`;
+  } else {
+    promptText = `You are an Oxford PPE tutor. I'm working on this week's essay question:
+
+"${week.essayQuestion}"
+
+CONTEXT: ${week.essayContext}
+
+I haven't drafted yet — I want to think it through with you first. Press me on:
+1. What's my thesis going to be?
+2. What's the strongest argument FOR my position?
+3. What's the strongest argument AGAINST my position?
+4. How does my argument survive the counter?
+
+Be a hostile tutor — don't let me settle for vague answers. After we work through it, summarise what my essay needs to argue.
+
+Start now.`;
+  }
+
+  currentTutorEssay = promptText;
+  document.getElementById('tutorPromptText').textContent = promptText;
+  document.getElementById('tutorDialog').classList.add('active');
+}
+
+function copyTutorPrompt() {
+  navigator.clipboard.writeText(currentTutorEssay).then(() => {
+    showToast('✓ Prompt copied — paste into Claude');
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement('textarea');
+    ta.value = currentTutorEssay;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('✓ Prompt copied — paste into Claude');
+  });
+}
+
+function exportNotes() {
+  let md = '# My Curriculum Notes\n\nExported ' + new Date().toLocaleDateString() + '\n\n';
+  let hasContent = false;
+  for (let w = 1; w <= TOTAL_WEEKS; w++) {
+    const week = WEEKS[w - 1];
+    let weekMD = `## Week ${w} — ${week.theme}\n\n**Essay question:** ${week.essayQuestion}\n\n`;
+    let weekHas = false;
+    for (const t of week.tasks) {
+      const key = taskKey(w, t.track, t.day);
+      const notes = state.notes[key];
+      if (notes) {
+        weekHas = true; hasContent = true;
+        weekMD += `### ${t.title} (${TRACKS[t.track].full}, Day ${t.day})\n\n${notes}\n\n`;
+      }
+    }
+    if (weekHas) md += weekMD;
+  }
+  if (!hasContent) { showToast('No notes yet'); return; }
+  download(md, `curriculum-notes-${new Date().toISOString().split('T')[0]}.md`, 'text/markdown');
+  showToast('Notes downloaded');
+}
+
+function exportData() {
+  const data = JSON.stringify({
+    version: 'v4',
+    exportedAt: new Date().toISOString(),
+    state: { startDate: state.startDate, done: state.done, notes: state.notes, timeSpent: state.timeSpent, theme: state.theme }
+  }, null, 2);
+  download(data, `curriculum-backup-${new Date().toISOString().split('T')[0]}.json`, 'application/json');
+  showToast('Backup downloaded');
+}
+
+function download(content, filename, type) {
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importData(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      if (parsed.state) {
+        if (confirm('Replace your current progress with the imported backup?')) {
+          state = { ...state, ...parsed.state };
+          saveState();
+          renderAll();
+          showToast('Imported successfully');
+        }
+      } else { showToast('Invalid backup file'); }
+    } catch (err) { showToast('Failed to read file'); }
+  };
+  reader.readAsText(file);
+}
+
+function setup() {
+  document.querySelectorAll('.nav-item').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + b.dataset.view).classList.add('active');
+      if (b.dataset.view === 'week') { state.viewingWeek = getCurrentWeek(); renderWeekView(); }
+    });
+  });
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    state.theme = state.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', state.theme);
+    saveState();
+  });
+
+  document.querySelectorAll('.energy-btn').forEach(b => {
+    b.addEventListener('click', () => { state.energy = b.dataset.energy; renderToday(); });
+  });
+
+  document.getElementById('prevWeek').addEventListener('click', () => {
+    state.viewingWeek = (state.viewingWeek || getCurrentWeek()) - 1;
+    if (state.viewingWeek < 1) state.viewingWeek = 1;
+    renderWeekView();
+  });
+  document.getElementById('nextWeek').addEventListener('click', () => {
+    state.viewingWeek = (state.viewingWeek || getCurrentWeek()) + 1;
+    if (state.viewingWeek > TOTAL_WEEKS) state.viewingWeek = TOTAL_WEEKS;
+    renderWeekView();
+  });
+
+  document.getElementById('wsClose').addEventListener('click', closeWorkspace);
+  document.getElementById('wsCloseBtn').addEventListener('click', closeWorkspace);
+  document.getElementById('wsMarkDone').addEventListener('click', markCurrentDone);
+  document.getElementById('wsTimerToggle').addEventListener('click', toggleTimer);
+
+  document.getElementById('wsNotes').addEventListener('input', () => {
+    updateWordCount();
+    clearTimeout(notesSaveTimeout);
+    notesSaveTimeout = setTimeout(saveNotes, 500);
+  });
+
+  document.getElementById('workspaceOverlay').addEventListener('click', e => {
+    if (e.target.id === 'workspaceOverlay') closeWorkspace();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (document.getElementById('tutorDialog').classList.contains('active')) {
+        document.getElementById('tutorDialog').classList.remove('active');
+      } else if (document.getElementById('workspaceOverlay').classList.contains('active')) {
+        closeWorkspace();
+      }
+    }
+  });
+
+  document.getElementById('saveStartBtn').addEventListener('click', () => {
+    const val = document.getElementById('startDateInput').value;
+    if (val) { state.startDate = val; saveState(); renderAll(); showToast('Start date saved'); }
+  });
+  document.getElementById('todayStartBtn').addEventListener('click', () => {
+    state.startDate = new Date().toISOString().split('T')[0];
+    saveState(); renderAll(); showToast('Reset to today');
+  });
+
+  document.getElementById('exportNotesBtn').addEventListener('click', exportNotes);
+  document.getElementById('exportDataBtn').addEventListener('click', exportData);
+  document.getElementById('importInput').addEventListener('change', e => {
+    if (e.target.files[0]) importData(e.target.files[0]);
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    if (confirm('Reset all progress, notes, and timers?')) {
+      state = { ...state, done: {}, notes: {}, timeSpent: {}, startDate: new Date().toISOString().split('T')[0] };
+      saveState(); renderAll(); showToast('Reset complete');
+    }
+  });
+
+  document.getElementById('copyTutorBtn').addEventListener('click', copyTutorPrompt);
+  document.getElementById('closeTutorDialog').addEventListener('click', () => {
+    document.getElementById('tutorDialog').classList.remove('active');
+  });
+}
+
+function manualAdvance() {
+  const wN = getCurrentWeek();
+  const tutorialDone = isDone(wN, 'ppe', 6);
+  if (!tutorialDone) {
+    if (!confirm(`The Saturday tutorial isn't marked done for week ${wN}. Are you sure you want to advance to week ${wN + 1}? You can always come back.`)) return;
+  }
+  if (advanceToNextWeek()) {
+    showToast(`Week ${state.currentWeek} begins`);
+    renderAll();
+  }
+}
+
+function jumpToWeek(wN) {
+  if (!confirm(`Jump ahead to week ${wN}? Earlier weeks will still be there if you want to return.`)) return;
+  state.currentWeek = wN;
+  if (!state.weekStartDates[wN]) {
+    state.weekStartDates[wN] = new Date().toISOString().split('T')[0];
+  }
+  state.viewingWeek = null;
+  saveState();
+  renderAll();
+  showToast(`Now on week ${wN}`);
+}
+
+window.toggleDone = toggleDone;
+window.showTrackDetail = showTrackDetail;
+window.openHostileTutorForWeek = openHostileTutorForWeek;
+window.manualAdvance = manualAdvance;
+window.jumpToWeek = jumpToWeek;
+window.goBackToWeek = goBackToWeek;
+
+(function init() {
+  renderDate();
+  loadState();
+  setup();
+  renderAll();
+})();
+</script>
+</body>
+</html>
